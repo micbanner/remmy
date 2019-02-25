@@ -1,0 +1,4 @@
+remmy_main_admin_user:
+    resource: "@RemmyMainBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+

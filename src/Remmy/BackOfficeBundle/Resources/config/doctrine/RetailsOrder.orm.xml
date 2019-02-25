@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Remmy\BackOfficeBundle\Entity\RetailsOrder" table="retails_order">
+    <indexes>
+      <index name="idOrder" columns="idOrder"/>
+      <index name="idProduct" columns="idProduct"/>
+    </indexes>
+    <id name="idretail" type="integer" column="idRetail">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="quantity" type="integer" column="quantity" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="priceUnit" type="integer" column="price_unit" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="taxeUnit" type="integer" column="taxe_unit" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idorder" target-entity="UserOrder" fetch="LAZY">
+      <join-columns>
+        <join-column name="idOrder" referenced-column-name="idOrder"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idproduct" target-entity="Product" fetch="LAZY">
+      <join-columns>
+        <join-column name="idProduct" referenced-column-name="idProduct"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Remmy\BackOfficeBundle\Entity\StockProduct" table="stock_product">
+    <indexes>
+      <index name="idProduct" columns="idProduct"/>
+      <index name="idColor" columns="idColor"/>
+      <index name="idSize" columns="idSize"/>
+    </indexes>
+    <id name="idstock" type="integer" column="idStock">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="quantity" type="integer" column="quantity" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idproduct" target-entity="Product" fetch="LAZY">
+      <join-columns>
+        <join-column name="idProduct" referenced-column-name="idProduct"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idcolor" target-entity="Color" fetch="LAZY">
+      <join-columns>
+        <join-column name="idColor" referenced-column-name="idColor"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idsize" target-entity="Size" fetch="LAZY">
+      <join-columns>
+        <join-column name="idSize" referenced-column-name="idSize"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

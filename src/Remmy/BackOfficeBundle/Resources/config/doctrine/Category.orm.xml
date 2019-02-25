@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Remmy\BackOfficeBundle\Entity\Category" table="category">
+    <indexes>
+      <index name="category_idCategory" columns="category_idCategory"/>
+    </indexes>
+    <id name="idcategory" type="integer" column="idCategory">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="categorycategory" target-entity="Category" fetch="LAZY">
+      <join-columns>
+        <join-column name="category_idCategory" referenced-column-name="idCategory"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idSize" target-entity="Size" inversed-by="idCategory" fetch="LAZY">
+      <join-table name="category_has_size">
+        <join-columns>
+          <join-column name="id_category" referenced-column-name="idCategory"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_size" referenced-column-name="idSize"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

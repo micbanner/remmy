@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Remmy\BackOfficeBundle\Entity\UserOrder" table="user_order">
+    <indexes>
+      <index name="idUser" columns="idUser"/>
+    </indexes>
+    <id name="idorder" type="integer" column="idOrder">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="datestart" type="date" column="dateStart" nullable="true"/>
+    <field name="datestop" type="date" column="dateStop" nullable="true"/>
+    <field name="statut" type="string" column="statut" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="quantitytotal" type="integer" column="QuantityTotal" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="totalamount" type="integer" column="totalAmount" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="taxes" type="integer" column="taxes" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="iduser" target-entity="FosUser" fetch="LAZY">
+      <join-columns>
+        <join-column name="idUser" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

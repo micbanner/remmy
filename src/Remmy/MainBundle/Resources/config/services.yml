@@ -1,0 +1,4 @@
+services:
+#    remmy_main.example:
+#        class: Remmy\MainBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
