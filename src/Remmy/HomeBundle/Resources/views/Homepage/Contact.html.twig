@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container ">
+
+<h1>CONTACT</h1>
+<form action="" class="formulaire col-sm-12">
+        <div class="form-group">
+                <label for="">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}</label>
+                <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="{{ 'form.enter a email adresse'|trans({}, 'FOSUserBundle') }}">
+        </div>
+
+        <div class="form-group">
+        <label>{{ 'form.object'|trans({}, 'FOSUserBundle') }}</label>
+        <select class="form-control">
+                <option>{{ 'form.ask a question'|trans({}, 'FOSUserBundle') }}</label></option>
+                <option>{{ 'form.order'|trans({}, 'FOSUserBundle') }}</label></option>
+                <option>{{ 'form.claim'|trans({}, 'FOSUserBundle') }}</option>
+                <option>{{ 'form.other'|trans({}, 'FOSUserBundle') }}</option>
+        </select>
+        </div>
+        <div class="form-group">
+                <label for="exampleFormControlTextarea1"> {{ 'form.describe your needs'|trans({}, 'FOSUserBundle') }}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        
+        <input class="btn btn-success" type="submit" id="" name="formu_submit" value="{{ 'form.submit'|trans({}, 'FOSUserBundle') }}">
+</form>
+</div>
+{% endblock %}

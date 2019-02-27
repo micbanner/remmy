@@ -1,0 +1,49 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * InfosPayement
+ *
+ * @ORM\Table(name="infos_payement", indexes={@ORM\Index(name="idUser", columns={"idUser"})})
+ * @ORM\Entity
+ */
+class InfosPayement
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idPayement", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpayement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typePayement", type="string", length=255, nullable=false)
+     */
+    private $typepayement;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="cardNumber", type="integer", nullable=true)
+     */
+    private $cardnumber;
+
+    /**
+     * @var \FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id")
+     * })
+     */
+    private $iduser;
+
+
+}

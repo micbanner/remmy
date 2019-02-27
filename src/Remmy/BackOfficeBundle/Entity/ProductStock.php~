@@ -1,0 +1,66 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProductStock
+ *
+ * @ORM\Table(name="product_stock", uniqueConstraints={@ORM\UniqueConstraint(name="idProduct", columns={"idColor", "idSize"})}, indexes={@ORM\Index(name="idSize", columns={"idSize"}), @ORM\Index(name="IDX_EA6A2D3C71920BF4", columns={"idColor"})})
+ * @ORM\Entity
+ */
+class ProductStock
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idStock", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idstock;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantity", type="integer", nullable=false)
+     */
+    private $quantity;
+
+    /**
+     * @var \Color
+     *
+     * @ORM\ManyToOne(targetEntity="Color")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idColor", referencedColumnName="idColor")
+     * })
+     */
+    private $idcolor;
+
+    /**
+     * @var \Size
+     *
+     * @ORM\ManyToOne(targetEntity="Size")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idSize", referencedColumnName="idSize")
+     * })
+     */
+    private $idsize;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="stockstock")
+     */
+    private $productstock;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->productstock = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

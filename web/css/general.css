@@ -1,0 +1,106 @@
+/*GENERAL*/
+*
+{
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.bandeau
+{
+    width: 100vw;
+    position: absolute;
+    left: calc(-1 *(100vw - 100% ) /2);
+}
+
+.logo
+{
+    position: relative;
+    margin-top: -30px;
+}
+
+.bar-navigation
+{
+    margin-top: 50px;
+}
+
+.mid-header
+{
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.hr2 {
+    margin: 15px 0 10px;
+    line-height: 1.3;
+    font-style: normal;
+    text-decoration: none;
+    border-bottom: 2px solid GREY;
+}
+    
+a {
+    color: #777;
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #777;
+}
+
+.foot-base
+{
+    background: grey;
+}
+
+.foot-bandeau
+{
+    position: absolute;
+    width: 100vw;
+    left: calc(-1 *(100vw - 100% ) /2);
+    z-index: 0;
+}
+
+.payment
+{
+    position: relative;
+    z-index: 1;
+}
+
+h6 a 
+{
+    color: white;
+    font-weight: bold;
+}
+
+.footer-copyright 
+{
+    margin-top: 70px;
+}
+
+/*FOOTER*/
+footer div a{
+    color: white;
+}
+
+/***PAGE CGV */
+
+.cgv h1
+{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.cgv h5
+{
+    margin-top: 50px;
+}
+
+/*FORMULAIRE*/
+
+.formulaire
+{
+    margin-top: 40px;
+    margin-bottom:150px;
+}

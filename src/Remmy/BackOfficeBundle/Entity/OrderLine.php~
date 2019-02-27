@@ -1,0 +1,100 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * OrderLine
+ *
+ * @ORM\Table(name="order_line", indexes={@ORM\Index(name="idSize", columns={"idSize"}), @ORM\Index(name="idColor", columns={"idColor"}), @ORM\Index(name="idOrder", columns={"idOrder"}), @ORM\Index(name="idProduct", columns={"idProduct"})})
+ * @ORM\Entity
+ */
+class OrderLine
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idOrderLine", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idorderline;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantity", type="integer", nullable=false)
+     */
+    private $quantity;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UnitPrice", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $unitprice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="totalPrice", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $totalprice;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="taxable", type="boolean", nullable=false)
+     */
+    private $taxable;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="taxeAmount", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $taxeamount;
+
+    /**
+     * @var \Color
+     *
+     * @ORM\ManyToOne(targetEntity="Color")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idColor", referencedColumnName="idColor")
+     * })
+     */
+    private $idcolor;
+
+    /**
+     * @var \Product
+     *
+     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
+     * })
+     */
+    private $idproduct;
+
+    /**
+     * @var \Size
+     *
+     * @ORM\ManyToOne(targetEntity="Size")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idSize", referencedColumnName="idSize")
+     * })
+     */
+    private $idsize;
+
+    /**
+     * @var \OrderHeader
+     *
+     * @ORM\ManyToOne(targetEntity="OrderHeader")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idOrder", referencedColumnName="idOrder")
+     * })
+     */
+    private $idorder;
+
+
+}

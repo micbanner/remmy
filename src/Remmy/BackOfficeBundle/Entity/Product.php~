@@ -1,0 +1,108 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Product
+ *
+ * @ORM\Table(name="product", indexes={@ORM\Index(name="category_idCategory", columns={"category_idCategory"})})
+ * @ORM\Entity
+ */
+class Product
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idProduct", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idproduct;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", length=65535, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="price", type="integer", nullable=false)
+     */
+    private $price;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="category_category_idCategory", type="integer", nullable=true)
+     */
+    private $categoryCategoryIdcategory;
+
+    /**
+     * @var \Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_idCategory", referencedColumnName="idCategory")
+     * })
+     */
+    private $categorycategory;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Color", inversedBy="productproduct")
+     * @ORM\JoinTable(name="product_has_color",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="product_idProduct", referencedColumnName="idProduct")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="color_idColor", referencedColumnName="idColor")
+     *   }
+     * )
+     */
+    private $colorcolor;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="ProductStock", inversedBy="productstock")
+     * @ORM\JoinTable(name="product_has_stock",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="product_idstock", referencedColumnName="idProduct")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="stock_idstock", referencedColumnName="idStock")
+     *   }
+     * )
+     */
+    private $stockstock;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->colorcolor = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->stockstock = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

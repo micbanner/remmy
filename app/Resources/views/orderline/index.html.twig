@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Orderlines list</h1>
+
+    <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Idorderline</th>
+                <th>Quantity</th>
+                <th>Unitprice</th>
+                <th>Totalprice</th>
+                <th>Taxable</th>
+                <th>Taxeamount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for orderLine in orderLines %}
+            <tr>
+                <td><a href="{{ path('orderline_show', { 'idorderline': orderLine.idorderline }) }}">{{ orderLine.idorderline }}</a></td>
+                <td>{{ orderLine.quantity }}</td>
+                <td>{{ orderLine.unitprice }}</td>
+                <td>{{ orderLine.totalprice }}</td>
+                <td>{% if orderLine.taxable %}Yes{% else %}No{% endif %}</td>
+                <td>{{ orderLine.taxeamount }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('orderline_show', { 'idorderline': orderLine.idorderline }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

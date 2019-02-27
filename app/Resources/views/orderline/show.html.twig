@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Orderline</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idorderline</th>
+                <td>{{ orderLine.idorderline }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ orderLine.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Unitprice</th>
+                <td>{{ orderLine.unitprice }}</td>
+            </tr>
+            <tr>
+                <th>Totalprice</th>
+                <td>{{ orderLine.totalprice }}</td>
+            </tr>
+            <tr>
+                <th>Taxable</th>
+                <td>{% if orderLine.taxable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Taxeamount</th>
+                <td>{{ orderLine.taxeamount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('orderline_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+front_homepage:
+    path:     /user
+    defaults: { _controller: RemmyFrontBundle:Default:index }
+
+front_shoppingCard:
+    path:     /user/card
+    defaults: { _controller: RemmyFrontBundle:ShoppingCard:shopping }
+
+front_product_retail:
+    path:     /product
+    defaults: { _controller: RemmyFrontBundle:ProductRetail:Retail}

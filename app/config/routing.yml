@@ -1,0 +1,68 @@
+remmy_back_office_order_header:
+    resource: "@RemmyBackOfficeBundle/Controller/OrderHeaderController.php"
+    type:     annotation
+
+remmy_back_office_order_line:
+    resource: "@RemmyBackOfficeBundle/Controller/OrderLineController.php"
+    type:     annotation
+
+remmy_back_office_order_header:
+    resource: "@RemmyBackOfficeBundle/Controller/OrderHeaderController.php"
+    type:     annotation
+
+remmy_back_office_stock_product:
+    resource: "@RemmyBackOfficeBundle/Controller/StockProductController.php"
+    type:     annotation
+
+remmy_back_office_size:
+    resource: "@RemmyBackOfficeBundle/Controller/SizeController.php"
+    type:     annotation
+
+remmy_back_office_color:
+    resource: "@RemmyBackOfficeBundle/Controller/ColorController.php"
+    type:     annotation
+
+remmy_back_office_category:
+    resource: "@RemmyBackOfficeBundle/Controller/CategoryController.php"
+    type:     annotation
+
+remmy_home:
+    resource: "@RemmyHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+front:
+    resource: "@RemmyFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+remmy_back_office_product:
+    resource: "@RemmyBackOfficeBundle/Controller/ProductController.php"
+    type:     annotation
+
+remmy_back_office:
+    resource: "@RemmyBackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+
+remmy_main:
+    resource: "@RemmyMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

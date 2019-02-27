@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Orderheaders list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idorder</th>
+                <th>Creationdate</th>
+                <th>Lastupdate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for orderHeader in orderHeaders %}
+            <tr>
+                <td><a href="{{ path('orderheader_show', { 'idorder': orderHeader.idorder }) }}">{{ orderHeader.idorder }}</a></td>
+                <td>{% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('orderheader_show', { 'idorder': orderHeader.idorder }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

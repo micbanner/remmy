@@ -1,0 +1,64 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Category
+ *
+ * @ORM\Table(name="category", indexes={@ORM\Index(name="category_idCategory", columns={"category_idCategory"})})
+ * @ORM\Entity
+ */
+class Category
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idCategory", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcategory;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var \Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_idCategory", referencedColumnName="idCategory")
+     * })
+     */
+    private $categorycategory;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Size", inversedBy="idCategory")
+     * @ORM\JoinTable(name="category_has_size",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_category", referencedColumnName="idCategory")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_size", referencedColumnName="idSize")
+     *   }
+     * )
+     */
+    private $idSize;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idSize = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

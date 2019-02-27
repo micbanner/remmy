@@ -1,0 +1,49 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block body %}
+    <h1>Orderheader</h1>
+    {{dump(orderHeader)}}
+    {{dump(orderLines)}}
+    <table>
+        <tbody>
+            <tr>
+                <th>Idorder</th>
+                <td>{{ orderHeader.idorder }}</td>
+            </tr>
+            <tr>
+                <th>Creationdate</th>
+                <td>{% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lastupdate</th>
+                <td>{% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <tbody>
+            {% for orderLine in orderLines %}
+            <tr>
+                <th>Idorder</th>
+                <td>{{ orderLine.idproduct.name}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Creationdate</th>
+                <td>{% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lastupdate</th>
+                <td>{% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('orderheader_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

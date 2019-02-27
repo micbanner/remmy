@@ -1,0 +1,40 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block body %}
+
+<a href="{{ path('color_new') }}" class="btn btn-success">Create a new color</a><hr>
+    <h1>Colors list</h1>
+
+    <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Codecolor</th>
+                <th>Description</th>
+                <th>Idcolor</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for color in colors %}
+            <tr>
+                <td><a href="{{ path('color_show', { 'idcolor': color.idcolor }) }}">{{ color.name }}</a></td>
+                <td>{{ color.codecolor }}</td>
+                <td>{{ color.description }}</td>
+                <td>{{ color.idcolor }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('color_show', { 'idcolor': color.idcolor }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('color_edit', { 'idcolor': color.idcolor }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

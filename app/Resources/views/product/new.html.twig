@@ -1,0 +1,20 @@
+{% extends 'admin-base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Product creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_row(form.image) }}
+        <input type="submit" value="Create" class="btn btn-success"/>
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('product_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

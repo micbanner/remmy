@@ -1,0 +1,77 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserOrder
+ *
+ * @ORM\Table(name="user_order", indexes={@ORM\Index(name="idUser", columns={"idUser"})})
+ * @ORM\Entity
+ */
+class UserOrder
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idOrder", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idorder;
+
+    /**
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="dateStart", type="date", nullable=true)
+     */
+    private $datestart;
+
+    /**
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="dateStop", type="date", nullable=true)
+     */
+    private $datestop;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="statut", type="string", length=255, nullable=false)
+     */
+    private $statut;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="QuantityTotal", type="integer", nullable=false)
+     */
+    private $quantitytotal;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="totalAmount", type="integer", nullable=false)
+     */
+    private $totalamount;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="taxes", type="integer", nullable=false)
+     */
+    private $taxes;
+
+    /**
+     * @var \FosUser
+     *
+     * @ORM\ManyToOne(targetEntity="FosUser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idUser", referencedColumnName="id")
+     * })
+     */
+    private $iduser;
+
+
+}
