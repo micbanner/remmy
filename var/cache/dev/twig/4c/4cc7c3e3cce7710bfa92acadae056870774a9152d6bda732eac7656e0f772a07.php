@@ -12,7 +12,7 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "orderheader/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin-base.html.twig", "orderheader/index.html.twig", 1);
         $this->blocks = [
             'body' => [$this, 'block_body'],
         ];
@@ -20,7 +20,7 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin-base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -52,8 +52,8 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
         // line 4
         echo "    <h1>Orderheaders list</h1>
 
-    <table>
-        <thead>
+    <table class=\"table table-bordered\">
+        <thead class=\"thead-dark\">
             <tr>
                 <th>Idorder</th>
                 <th>Creationdate</th>
@@ -134,13 +134,13 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'admin-base.html.twig' %}
 
 {% block body %}
     <h1>Orderheaders list</h1>
 
-    <table>
-        <thead>
+    <table class=\"table table-bordered\">
+        <thead class=\"thead-dark\">
             <tr>
                 <th>Idorder</th>
                 <th>Creationdate</th>

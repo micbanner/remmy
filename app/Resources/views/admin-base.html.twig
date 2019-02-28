@@ -22,11 +22,12 @@
                 <ul id="side-main-menu" class="side-menu list-unstyled">
                   <li><a href="{{ path('admin_user_index') }}"><i class="fas fa-ellipsis-v"></i>All Users</a></li>
                 </ul>
-              </div>
+              </div><hr>
+
               <div class="admin-menu">
                 <h5 class="sidenav-heading">Product</h5>
                 <ul id="side-admin-menu" class="side-menu list-unstyled"> 
-                  <li> <a href="{{ path('product_index') }}"><i class="fas fa-list-ul"></i>All Items</a></li>
+                  <li><a href="{{ path('product_index') }}"><i class="fas fa-list-ul"></i>All Items</a></li>
                   <li><a href="#collapse_product" aria-expanded="false" data-toggle="collapse"><i class="far fa-arrow-alt-circle-down"></i>Items<div class="badge badge-info">Item</div></a>
                     <ul id="collapse_product" class="collapse">
                       <li><a href="#">Page</a></li>
@@ -38,6 +39,13 @@
                   <li> <a href="{{ path('color_index') }}"><i class="fas fa-ellipsis-v"></i>Color</a></li>
                   <li> <a href="{{ path('size_index') }}"><i class="fas fa-ellipsis-v"></i>Size</a></li>
                   <li> <a href="{{ path('stockproduct_index') }}"><i class="fas fa-ellipsis-v"></i>Stock</a></li>
+                </ul>
+                </div><hr>
+
+                <div>
+                <h5 class="sidenav-heading">Orders</h5>
+                <ul id="side-admin-menu" class="side-menu list-unstyled">
+                    <li><a href="{{ path('orderheader_index') }}"><i class="fas fa-list-ul"></i>All</a></li>
                 </ul>
               </div>  
             </div>

@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@RemmyBackOffice/AdminOffice/admin.html.twig');
+        return $this->render('admin-base.html.twig');
     }
 }
