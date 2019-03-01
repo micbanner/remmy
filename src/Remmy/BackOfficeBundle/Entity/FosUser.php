@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * FosUser
  *
- * @ORM\Table(name="fos_user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_957A6479C05FB297", columns={"confirmation_token"}), @ORM\UniqueConstraint(name="UNIQ_957A647992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_957A6479A0D96FBF", columns={"email_canonical"})})
+ * @ORM\Table(name="fos_user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_957A6479A0D96FBF", columns={"email_canonical"}), @ORM\UniqueConstraint(name="UNIQ_957A6479C05FB297", columns={"confirmation_token"}), @ORM\UniqueConstraint(name="UNIQ_957A647992FC23A8", columns={"username_canonical"})})
  * @ORM\Entity
  */
 class FosUser
@@ -176,7 +176,7 @@ class FosUser
     public function setGender($gender = null)
     {
         $this->gender = $gender;
-
+    
         return $this;
     }
 
@@ -200,7 +200,7 @@ class FosUser
     public function setUsername($username)
     {
         $this->username = $username;
-
+    
         return $this;
     }
 
@@ -224,7 +224,7 @@ class FosUser
     public function setUsernameCanonical($usernameCanonical)
     {
         $this->usernameCanonical = $usernameCanonical;
-
+    
         return $this;
     }
 
@@ -248,7 +248,7 @@ class FosUser
     public function setFirstname($firstname = null)
     {
         $this->firstname = $firstname;
-
+    
         return $this;
     }
 
@@ -272,7 +272,7 @@ class FosUser
     public function setLastname($lastname = null)
     {
         $this->lastname = $lastname;
-
+    
         return $this;
     }
 
@@ -296,7 +296,7 @@ class FosUser
     public function setEmail($email)
     {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -320,7 +320,7 @@ class FosUser
     public function setEmailCanonical($emailCanonical)
     {
         $this->emailCanonical = $emailCanonical;
-
+    
         return $this;
     }
 
@@ -344,7 +344,7 @@ class FosUser
     public function setPassword($password)
     {
         $this->password = $password;
-
+    
         return $this;
     }
 
@@ -368,7 +368,7 @@ class FosUser
     public function setRoles($roles)
     {
         $this->roles = $roles;
-
+    
         return $this;
     }
 
@@ -392,7 +392,7 @@ class FosUser
     public function setAddress($address = null)
     {
         $this->address = $address;
-
+    
         return $this;
     }
 
@@ -416,7 +416,7 @@ class FosUser
     public function setCity($city = null)
     {
         $this->city = $city;
-
+    
         return $this;
     }
 
@@ -440,7 +440,7 @@ class FosUser
     public function setZipCode($zipCode = null)
     {
         $this->zipCode = $zipCode;
-
+    
         return $this;
     }
 
@@ -464,7 +464,7 @@ class FosUser
     public function setCountry($country = null)
     {
         $this->country = $country;
-
+    
         return $this;
     }
 
@@ -488,7 +488,7 @@ class FosUser
     public function setPhone($phone = null)
     {
         $this->phone = $phone;
-
+    
         return $this;
     }
 
@@ -512,7 +512,7 @@ class FosUser
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
-
+    
         return $this;
     }
 
@@ -536,7 +536,7 @@ class FosUser
     public function setLastLogin($lastLogin = null)
     {
         $this->lastLogin = $lastLogin;
-
+    
         return $this;
     }
 
@@ -560,7 +560,7 @@ class FosUser
     public function setPasswordRequestedAt($passwordRequestedAt = null)
     {
         $this->passwordRequestedAt = $passwordRequestedAt;
-
+    
         return $this;
     }
 
@@ -584,7 +584,7 @@ class FosUser
     public function setConfirmationToken($confirmationToken = null)
     {
         $this->confirmationToken = $confirmationToken;
-
+    
         return $this;
     }
 
@@ -608,7 +608,7 @@ class FosUser
     public function setSalt($salt = null)
     {
         $this->salt = $salt;
-
+    
         return $this;
     }
 

@@ -4,38 +4,45 @@
     <h1>Order Retail</h1>
     {{dump(orderHeader)}}
     {{dump(orderLines)}}
-    <table>
-        <tbody>
-            <tr>
-                <th>Idorder</th>
-                <td>{{ orderHeader.idorder }}</td>
-            </tr>
-            <tr>
-                <th>Creationdate</th>
-                <td>{% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Lastupdate</th>
-                <td>{% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <table>
+<h3>Idorder: {{ orderHeader.idorder }}</h3>
+<h3>Creationdate: {% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</h3>
+<h4>Lastupdate: {% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}Idorder: {{ orderHeader.idorder }}</h4>
+
+
+<h3>Username: <a href="{{ path('admin_user_show', {'id': orderHeader.iduser.id }) }}">{{orderHeader.iduser.username}}</a></h3>
+
+
+
+<table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id order</th>
+                <th>product</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Total price</th>
+                <th>Taxable</th>
+                <th>Taxe amount</th>
+                <th>Actions</th>
+            </tr>
         <tbody>
             {% for orderLine in orderLines %}
             <tr>
-                <th>Idorder</th>
-                <td>{{ orderLine.idproduct.name}}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Creationdate</th>
-                <td>{% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Lastupdate</th>
-                <td>{% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}</td>
+                <td><a href="{{ path('orderline_show', { 'idorderline': orderLine.idorderline }) }}">{{ orderLine.idorderline }}</a></td>
+                <td>{{ orderLine.idproduct.name }}</td>
+                <td>{{ orderLine.quantity }}</td>
+                <td>{{ orderLine.unitprice }}</td>
+                <td>{{ orderLine.totalprice }}</td>
+                <td>{% if orderLine.taxable %}Yes{% else %}No{% endif %} </td>
+                <td>{{ orderLine.taxeamount }} €</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('orderline_show', { 'idorderline': orderLine.idorderline }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

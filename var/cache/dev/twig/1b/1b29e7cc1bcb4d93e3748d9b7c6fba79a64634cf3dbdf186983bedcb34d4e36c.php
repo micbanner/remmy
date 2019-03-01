@@ -54,7 +54,10 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
         // line 13
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/ShoppingCar.css"), "html", null, true);
         echo "\" />
-    
+    <link rel=\"stylesheet\" href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/ui.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/> />
     <link rel=\"stylesheet\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/retails.css"), "html", null, true);
@@ -449,7 +452,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
 
     public function getDebugInfo()
     {
-        return array (  424 => 180,  355 => 120,  351 => 119,  324 => 97,  313 => 89,  300 => 81,  287 => 73,  277 => 66,  262 => 61,  245 => 59,  227 => 56,  209 => 22,  191 => 20,  175 => 183,  171 => 181,  169 => 180,  166 => 179,  164 => 61,  161 => 60,  159 => 59,  155 => 57,  153 => 56,  142 => 48,  139 => 47,  132 => 46,  125 => 45,  116 => 42,  109 => 41,  100 => 40,  97 => 39,  95 => 38,  83 => 29,  73 => 22,  70 => 21,  68 => 20,  60 => 15,  55 => 13,  51 => 12,  45 => 9,  35 => 1,);
+        return array (  427 => 180,  358 => 120,  354 => 119,  327 => 97,  316 => 89,  303 => 81,  290 => 73,  280 => 66,  265 => 61,  248 => 59,  230 => 56,  212 => 22,  194 => 20,  178 => 183,  174 => 181,  172 => 180,  169 => 179,  167 => 61,  164 => 60,  162 => 59,  158 => 57,  156 => 56,  145 => 48,  142 => 47,  135 => 46,  128 => 45,  119 => 42,  112 => 41,  103 => 40,  100 => 39,  98 => 38,  86 => 29,  76 => 22,  73 => 21,  71 => 20,  63 => 15,  59 => 14,  55 => 13,  51 => 12,  45 => 9,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -467,7 +470,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
     <!--asset CSS-->
     <link rel=\"stylesheet\" href=\"{{ asset('css/general.css') }}\" />
     <link rel=\"stylesheet\" href=\"{{ asset('css/ShoppingCar.css') }}\" />
-    
+    <link rel=\"stylesheet\" href=\"{{ asset('css/ui.css') }}\" rel=\"stylesheet\" type=\"text/css\"/> />
     <link rel=\"stylesheet\" href=\"{{ asset('css/retails.css') }}\" />
 
     <!-- Font Awsome -->

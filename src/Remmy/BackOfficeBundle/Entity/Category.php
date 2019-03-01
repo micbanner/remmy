@@ -41,24 +41,24 @@ class Category
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Size", inversedBy="idCategory")
+     * @ORM\ManyToMany(targetEntity="Size", inversedBy="idcategory")
      * @ORM\JoinTable(name="category_has_size",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="id_category", referencedColumnName="idCategory")
+     *     @ORM\JoinColumn(name="idCategory", referencedColumnName="idCategory")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="id_size", referencedColumnName="idSize")
+     *     @ORM\JoinColumn(name="idSize", referencedColumnName="idSize")
      *   }
      * )
      */
-    private $idSize;
+    private $idsize;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idSize = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idsize = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -82,7 +82,7 @@ class Category
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
@@ -106,7 +106,7 @@ class Category
     public function setCategorycategory(\Remmy\BackOfficeBundle\Entity\Category $categorycategory = null)
     {
         $this->categorycategory = $categorycategory;
-
+    
         return $this;
     }
 
@@ -121,38 +121,38 @@ class Category
     }
 
     /**
-     * Add idSize.
+     * Add idsize.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Size $idSize
+     * @param \Remmy\BackOfficeBundle\Entity\Size $idsize
      *
      * @return Category
      */
-    public function addIdSize(\Remmy\BackOfficeBundle\Entity\Size $idSize)
+    public function addIdsize(\Remmy\BackOfficeBundle\Entity\Size $idsize)
     {
-        $this->idSize[] = $idSize;
-
+        $this->idsize[] = $idsize;
+    
         return $this;
     }
 
     /**
-     * Remove idSize.
+     * Remove idsize.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Size $idSize
+     * @param \Remmy\BackOfficeBundle\Entity\Size $idsize
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeIdSize(\Remmy\BackOfficeBundle\Entity\Size $idSize)
+    public function removeIdsize(\Remmy\BackOfficeBundle\Entity\Size $idsize)
     {
-        return $this->idSize->removeElement($idSize);
+        return $this->idsize->removeElement($idsize);
     }
 
     /**
-     * Get idSize.
+     * Get idsize.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getIdSize()
+    public function getIdsize()
     {
-        return $this->idSize;
+        return $this->idsize;
     }
 }

@@ -41,24 +41,24 @@ class Category
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Size", inversedBy="idCategory")
+     * @ORM\ManyToMany(targetEntity="Size", inversedBy="idcategory")
      * @ORM\JoinTable(name="category_has_size",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="id_category", referencedColumnName="idCategory")
+     *     @ORM\JoinColumn(name="idCategory", referencedColumnName="idCategory")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="id_size", referencedColumnName="idSize")
+     *     @ORM\JoinColumn(name="idSize", referencedColumnName="idSize")
      *   }
      * )
      */
-    private $idSize;
+    private $idsize;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idSize = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idsize = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

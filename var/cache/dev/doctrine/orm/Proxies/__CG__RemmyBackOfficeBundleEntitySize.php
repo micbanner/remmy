@@ -64,10 +64,10 @@ class Size extends \Remmy\BackOfficeBundle\Entity\Size implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idCategory'];
+            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idcategory'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idCategory'];
+        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idcategory'];
     }
 
     /**
@@ -235,34 +235,34 @@ class Size extends \Remmy\BackOfficeBundle\Entity\Size implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
-    public function addIdCategory(\Remmy\BackOfficeBundle\Entity\Category $idCategory)
+    public function addIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdCategory', [$idCategory]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdcategory', [$idcategory]);
 
-        return parent::addIdCategory($idCategory);
+        return parent::addIdcategory($idcategory);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeIdCategory(\Remmy\BackOfficeBundle\Entity\Category $idCategory)
+    public function removeIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdCategory', [$idCategory]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdcategory', [$idcategory]);
 
-        return parent::removeIdCategory($idCategory);
+        return parent::removeIdcategory($idcategory);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getIdCategory()
+    public function getIdcategory()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdCategory', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdcategory', []);
 
-        return parent::getIdCategory();
+        return parent::getIdcategory();
     }
 
 }

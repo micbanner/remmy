@@ -26,14 +26,22 @@ class ProductController extends Controller
      * @Route("/", name="product_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $products = $em->getRepository('RemmyBackOfficeBundle:Product')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
+
 
         return $this->render('product/index.html.twig', array(
-            'products' => $products,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
+            'request' => $request,
         ));
     }
 
@@ -95,8 +103,16 @@ class ProductController extends Controller
     {
         $deleteForm = $this->createDeleteForm($product);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+
+
         return $this->render('product/show.html.twig', array(
             'product' => $product,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
             'delete_form' => $deleteForm->createView(),
         ));
     }

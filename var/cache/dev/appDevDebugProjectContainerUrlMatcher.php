@@ -107,6 +107,99 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/pro')) {
+            if (0 === strpos($pathinfo, '/productstock')) {
+                // productstock_index
+                if ('/productstock' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\ProductstockController::indexAction',  '_route' => 'productstock_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_productstock_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'productstock_index'));
+                    }
+
+                    return $ret;
+                }
+                not_productstock_index:
+
+                // productstock_new
+                if ('/productstock/new' === $pathinfo) {
+                    return array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\ProductstockController::newAction',  '_route' => 'productstock_new',);
+                }
+
+                // productstock_show
+                if (preg_match('#^/productstock/(?P<idstock>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'productstock_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\ProductstockController::showAction',));
+                }
+
+                // productstock_edit
+                if (preg_match('#^/productstock/(?P<idstock>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'productstock_edit']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\ProductstockController::editAction',));
+                }
+
+                // productstock_delete
+                if (preg_match('#^/productstock/(?P<idstock>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'productstock_delete']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\ProductstockController::deleteAction',));
+                }
+
+            }
+
+            // front_product_retail
+            if ('/product' === $pathinfo) {
+                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ProductRetailController::RetailAction',  '_route' => 'front_product_retail',);
+            }
+
+            if (0 === strpos($pathinfo, '/profile')) {
+                // fos_user_profile_show
+                if ('/profile' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_fos_user_profile_show;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'fos_user_profile_show'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_fos_user_profile_show;
+                    }
+
+                    return $ret;
+                }
+                not_fos_user_profile_show:
+
+                // fos_user_profile_edit
+                if ('/profile/edit' === $pathinfo) {
+                    $ret = array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_fos_user_profile_edit;
+                    }
+
+                    return $ret;
+                }
+                not_fos_user_profile_edit:
+
+                // fos_user_change_password
+                if ('/profile/change-password' === $pathinfo) {
+                    $ret = array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_fos_user_change_password;
+                    }
+
+                    return $ret;
+                }
+                not_fos_user_change_password:
+
+            }
+
+        }
+
         elseif (0 === strpos($pathinfo, '/orderheader')) {
             // orderheader_index
             if ('/orderheader' === $trimmedPathinfo) {
@@ -154,45 +247,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/admin')) {
-            if (0 === strpos($pathinfo, '/admin/stockproduct')) {
-                // stockproduct_index
-                if ('/admin/stockproduct' === $trimmedPathinfo) {
-                    $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\StockProductController::indexAction',  '_route' => 'stockproduct_index',);
-                    if ('/' === substr($pathinfo, -1)) {
-                        // no-op
-                    } elseif ('GET' !== $canonicalMethod) {
-                        goto not_stockproduct_index;
-                    } else {
-                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'stockproduct_index'));
-                    }
-
-                    return $ret;
-                }
-                not_stockproduct_index:
-
-                // stockproduct_new
-                if ('/admin/stockproduct/new' === $pathinfo) {
-                    return array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\StockProductController::newAction',  '_route' => 'stockproduct_new',);
-                }
-
-                // stockproduct_show
-                if (preg_match('#^/admin/stockproduct/(?P<idstock>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'stockproduct_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\StockProductController::showAction',));
-                }
-
-                // stockproduct_edit
-                if (preg_match('#^/admin/stockproduct/(?P<idstock>[^/]++)/edit$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'stockproduct_edit']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\StockProductController::editAction',));
-                }
-
-                // stockproduct_delete
-                if (preg_match('#^/admin/stockproduct/(?P<idstock>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'stockproduct_delete']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\StockProductController::deleteAction',));
-                }
-
-            }
-
-            elseif (0 === strpos($pathinfo, '/admin/size')) {
+            if (0 === strpos($pathinfo, '/admin/size')) {
                 // size_index
                 if ('/admin/size' === $trimmedPathinfo) {
                     $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\SizeController::indexAction',  '_route' => 'size_index',);
@@ -472,58 +527,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             if ('/user/card' === $pathinfo) {
                 return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ShoppingCardController::shoppingAction',  '_route' => 'front_shoppingCard',);
             }
-
-        }
-
-        // front_product_retail
-        if ('/product' === $pathinfo) {
-            return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ProductRetailController::RetailAction',  '_route' => 'front_product_retail',);
-        }
-
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if ('/profile' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'fos_user.profile.controller:showAction',  '_route' => 'fos_user_profile_show',);
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif ('GET' !== $canonicalMethod) {
-                    goto not_fos_user_profile_show;
-                } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'fos_user_profile_show'));
-                }
-
-                if (!in_array($canonicalMethod, ['GET'])) {
-                    $allow = array_merge($allow, ['GET']);
-                    goto not_fos_user_profile_show;
-                }
-
-                return $ret;
-            }
-            not_fos_user_profile_show:
-
-            // fos_user_profile_edit
-            if ('/profile/edit' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.profile.controller:editAction',  '_route' => 'fos_user_profile_edit',);
-                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                    $allow = array_merge($allow, ['GET', 'POST']);
-                    goto not_fos_user_profile_edit;
-                }
-
-                return $ret;
-            }
-            not_fos_user_profile_edit:
-
-            // fos_user_change_password
-            if ('/profile/change-password' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.change_password.controller:changePasswordAction',  '_route' => 'fos_user_change_password',);
-                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                    $allow = array_merge($allow, ['GET', 'POST']);
-                    goto not_fos_user_change_password;
-                }
-
-                return $ret;
-            }
-            not_fos_user_change_password:
 
         }
 

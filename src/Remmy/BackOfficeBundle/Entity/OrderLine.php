@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderLine
  *
- * @ORM\Table(name="order_line", indexes={@ORM\Index(name="idSize", columns={"idSize"}), @ORM\Index(name="idColor", columns={"idColor"}), @ORM\Index(name="idOrder", columns={"idOrder"}), @ORM\Index(name="idProduct", columns={"idProduct"})})
+ * @ORM\Table(name="order_line", indexes={@ORM\Index(name="idOrder", columns={"idOrder"}), @ORM\Index(name="idProduct", columns={"idProduct"}), @ORM\Index(name="idSize", columns={"idSize"}), @ORM\Index(name="idColor", columns={"idColor"})})
  * @ORM\Entity
  */
 class OrderLine
@@ -118,7 +118,7 @@ class OrderLine
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-
+    
         return $this;
     }
 
@@ -142,7 +142,7 @@ class OrderLine
     public function setUnitprice($unitprice)
     {
         $this->unitprice = $unitprice;
-
+    
         return $this;
     }
 
@@ -166,7 +166,7 @@ class OrderLine
     public function setTotalprice($totalprice)
     {
         $this->totalprice = $totalprice;
-
+    
         return $this;
     }
 
@@ -190,7 +190,7 @@ class OrderLine
     public function setTaxable($taxable)
     {
         $this->taxable = $taxable;
-
+    
         return $this;
     }
 
@@ -214,7 +214,7 @@ class OrderLine
     public function setTaxeamount($taxeamount)
     {
         $this->taxeamount = $taxeamount;
-
+    
         return $this;
     }
 
@@ -238,7 +238,7 @@ class OrderLine
     public function setIdcolor(\Remmy\BackOfficeBundle\Entity\Color $idcolor = null)
     {
         $this->idcolor = $idcolor;
-
+    
         return $this;
     }
 
@@ -262,7 +262,7 @@ class OrderLine
     public function setIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct = null)
     {
         $this->idproduct = $idproduct;
-
+    
         return $this;
     }
 
@@ -286,7 +286,7 @@ class OrderLine
     public function setIdsize(\Remmy\BackOfficeBundle\Entity\Size $idsize = null)
     {
         $this->idsize = $idsize;
-
+    
         return $this;
     }
 
@@ -310,7 +310,7 @@ class OrderLine
     public function setIdorder(\Remmy\BackOfficeBundle\Entity\OrderHeader $idorder = null)
     {
         $this->idorder = $idorder;
-
+    
         return $this;
     }
 

@@ -50,39 +50,38 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Orderheaders list</h1>
+        echo "    <h1>Order List</h1>
+
+            <h3>Idorder</h3> 
+            <h3>Creationdate</h3>
+            <h3>Lastupdate</h3> 
+            <h3></h3> 
+
+            <th>Actions</th>
 
     <table class=\"table table-bordered\">
-        <thead class=\"thead-dark\">
-            <tr>
-                <th>Idorder</th>
-                <th>Creationdate</th>
-                <th>Lastupdate</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
         <tbody>
         ";
-        // line 16
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["orderHeaders"]) || array_key_exists("orderHeaders", $context) ? $context["orderHeaders"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeaders" does not exist.', 16, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["orderHeaders"]) || array_key_exists("orderHeaders", $context) ? $context["orderHeaders"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeaders" does not exist.', 15, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["orderHeader"]) {
-            // line 17
+            // line 16
             echo "            <tr>
                 <td><a href=\"";
-            // line 18
+            // line 17
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orderheader_show", ["idorder" => twig_get_attribute($this->env, $this->source, $context["orderHeader"], "idorder", [])]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["orderHeader"], "idorder", []), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 19
+            // line 18
             if (twig_get_attribute($this->env, $this->source, $context["orderHeader"], "creationdate", [])) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["orderHeader"], "creationdate", []), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 20
+            // line 19
             if (twig_get_attribute($this->env, $this->source, $context["orderHeader"], "lastUpdate", [])) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["orderHeader"], "lastUpdate", []), "Y-m-d"), "html", null, true);
             }
@@ -91,7 +90,7 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
                     <ul>
                         <li>
                             <a href=\"";
-            // line 24
+            // line 23
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orderheader_show", ["idorder" => twig_get_attribute($this->env, $this->source, $context["orderHeader"], "idorder", [])]), "html", null, true);
             echo "\">show</a>
                         </li>
@@ -103,7 +102,7 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['orderHeader'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 29
         echo "        </tbody>
     </table>
 
@@ -129,7 +128,7 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
 
     public function getDebugInfo()
     {
-        return array (  107 => 30,  95 => 24,  86 => 20,  80 => 19,  74 => 18,  71 => 17,  67 => 16,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  106 => 29,  94 => 23,  85 => 19,  79 => 18,  73 => 17,  70 => 16,  66 => 15,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -137,17 +136,16 @@ class __TwigTemplate_4f489c8756b0bc2614e4d37b5b001318ddcf0379ca3054d432dc5e06003
         return new Twig_Source("{% extends 'admin-base.html.twig' %}
 
 {% block body %}
-    <h1>Orderheaders list</h1>
+    <h1>Order List</h1>
+
+            <h3>Idorder</h3> 
+            <h3>Creationdate</h3>
+            <h3>Lastupdate</h3> 
+            <h3></h3> 
+
+            <th>Actions</th>
 
     <table class=\"table table-bordered\">
-        <thead class=\"thead-dark\">
-            <tr>
-                <th>Idorder</th>
-                <th>Creationdate</th>
-                <th>Lastupdate</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
         <tbody>
         {% for orderHeader in orderHeaders %}
             <tr>

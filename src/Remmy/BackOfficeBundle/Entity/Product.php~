@@ -69,40 +69,24 @@ class Product
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Color", inversedBy="productproduct")
+     * @ORM\ManyToMany(targetEntity="Color", inversedBy="idproduct")
      * @ORM\JoinTable(name="product_has_color",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="product_idProduct", referencedColumnName="idProduct")
+     *     @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="color_idColor", referencedColumnName="idColor")
+     *     @ORM\JoinColumn(name="idColor", referencedColumnName="idColor")
      *   }
      * )
      */
-    private $colorcolor;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="ProductStock", inversedBy="productstock")
-     * @ORM\JoinTable(name="product_has_stock",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="product_idstock", referencedColumnName="idProduct")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="stock_idstock", referencedColumnName="idStock")
-     *   }
-     * )
-     */
-    private $stockstock;
+    private $idcolor;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->colorcolor = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->stockstock = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idcolor = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

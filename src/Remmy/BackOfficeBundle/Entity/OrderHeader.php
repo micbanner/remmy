@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderHeader
  *
- * @ORM\Table(name="order_header", indexes={@ORM\Index(name="idUser", columns={"idUser"}), @ORM\Index(name="statut", columns={"statut"})})
+ * @ORM\Table(name="order_header", indexes={@ORM\Index(name="statut", columns={"statut"}), @ORM\Index(name="idUser", columns={"idUser"})})
  * @ORM\Entity
  */
 class OrderHeader
@@ -77,7 +77,7 @@ class OrderHeader
     public function setCreationdate($creationdate)
     {
         $this->creationdate = $creationdate;
-
+    
         return $this;
     }
 
@@ -101,7 +101,7 @@ class OrderHeader
     public function setLastUpdate($lastUpdate)
     {
         $this->lastUpdate = $lastUpdate;
-
+    
         return $this;
     }
 
@@ -125,7 +125,7 @@ class OrderHeader
     public function setIduser(\Remmy\BackOfficeBundle\Entity\FosUser $iduser = null)
     {
         $this->iduser = $iduser;
-
+    
         return $this;
     }
 
@@ -149,7 +149,7 @@ class OrderHeader
     public function setStatut(\Remmy\BackOfficeBundle\Entity\Statut $statut = null)
     {
         $this->statut = $statut;
-
+    
         return $this;
     }
 

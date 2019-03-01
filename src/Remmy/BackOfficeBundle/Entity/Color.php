@@ -45,16 +45,16 @@ class Color
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="colorcolor")
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="idcolor")
      */
-    private $productproduct;
+    private $idproduct;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->productproduct = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idproduct = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -78,7 +78,7 @@ class Color
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
@@ -102,7 +102,7 @@ class Color
     public function setCodecolor($codecolor)
     {
         $this->codecolor = $codecolor;
-
+    
         return $this;
     }
 
@@ -126,7 +126,7 @@ class Color
     public function setDescription($description = null)
     {
         $this->description = $description;
-
+    
         return $this;
     }
 
@@ -141,38 +141,38 @@ class Color
     }
 
     /**
-     * Add productproduct.
+     * Add idproduct.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $productproduct
+     * @param \Remmy\BackOfficeBundle\Entity\Product $idproduct
      *
      * @return Color
      */
-    public function addProductproduct(\Remmy\BackOfficeBundle\Entity\Product $productproduct)
+    public function addIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
     {
-        $this->productproduct[] = $productproduct;
-
+        $this->idproduct[] = $idproduct;
+    
         return $this;
     }
 
     /**
-     * Remove productproduct.
+     * Remove idproduct.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $productproduct
+     * @param \Remmy\BackOfficeBundle\Entity\Product $idproduct
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeProductproduct(\Remmy\BackOfficeBundle\Entity\Product $productproduct)
+    public function removeIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
     {
-        return $this->productproduct->removeElement($productproduct);
+        return $this->idproduct->removeElement($idproduct);
     }
 
     /**
-     * Get productproduct.
+     * Get idproduct.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getProductproduct()
+    public function getIdproduct()
     {
-        return $this->productproduct;
+        return $this->idproduct;
     }
 }

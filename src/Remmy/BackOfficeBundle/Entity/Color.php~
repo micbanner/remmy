@@ -45,16 +45,16 @@ class Color
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="colorcolor")
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="idcolor")
      */
-    private $productproduct;
+    private $idproduct;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->productproduct = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idproduct = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

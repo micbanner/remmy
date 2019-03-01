@@ -131,7 +131,7 @@
     <parameter key="mailer_user">mic.banicles@gmail.com</parameter>
     <parameter key="mailer_password">000=micban</parameter>
     <parameter key="secret">24836e298501d700213cc61bc84b0907565e5866</parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="locale">fr</parameter>
     <parameter key="images_directory">C:\xampp\htdocs\symfony\Remmy/web/Uploads/Images_Products</parameter>
     <parameter key="avatar_directory">C:\xampp\htdocs\symfony\Remmy/web/Uploads/Avatar_Profils</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
@@ -139,7 +139,7 @@
     <parameter key="kernel.secret">24836e298501d700213cc61bc84b0907565e5866</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="templating.helper.code.file_link_format">null</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -647,7 +647,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
     </service>
     <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener">
@@ -852,7 +852,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument>C:\xampp\htdocs\symfony\Remmy/translations</argument>
       <argument>C:\xampp\htdocs\symfony\Remmy/templates</argument>
       <call method="setName">
@@ -1382,7 +1382,7 @@
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
       <argument type="service" id="service_locator.yepb.pt"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -1773,7 +1773,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>fr</argument>
         </argument>
       </call>
     </service>

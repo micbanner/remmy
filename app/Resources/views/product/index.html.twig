@@ -1,9 +1,10 @@
 {% extends 'admin-base.html.twig' %}
 
 {% block body %}
+<a href="{{ path('product_new') }}" class="btn btn-success">Create a new product</a><hr>
+<h1>All List</h1>
 
-    <a href="{{ path('product_new') }}" class="btn btn-success">Create a new product</a><hr>
-    <h1>All List</h1>
+{{dump(request)}}
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -12,12 +13,26 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th>color</th>
                 <th>Price</th>
-                <th>Stock</th>
+                <th>Total Quantity</th>
                 <th>Actions</th>
             </tr>
-        </thead>
+        </thead>    
         <tbody>
+
+        {# -- Initialisation de la quantité à Zero pour le prochain produit -- #}
+        {% set quantity = 0%}
+        
+        
+        {#{{ dump( productsRepo.findBycategoryCategoryIdcategory(2)) }}
+        {{ dump( request.query.get('idcategory') )}}#}
+            {% if request.query|length > 0 %}
+            {% set products = productsRepo.findBycategoryCategoryIdcategory(request.query.get('idcategory')) %}
+            {% else %}
+            {% set products = productsRepo.findAll() %}
+            {% endif %}
+
         {% for product in products %}
             {{dump(product)}}
             <tr>
@@ -25,8 +40,16 @@
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td><a href="{{ asset('uploads/images_products/' ~ product.image) }}" ><img src="{{ asset('uploads/images_products/' ~ product.image) }}" class="img_size" alt="remmy product"></a></td>
+                <td>color</td>
                 <td>{{ product.price }}</td>
-                <td>{{ product.price}}</td>
+                <td>
+                    {% for stock in productHasStocksRepo.findByidproduct(product.idproduct) %}
+                    {# Boucle sur chaque ligne de #}
+                    {% set quantity = quantity + productStocksRepo.findByidstock(stock.idstock)[0].quantity %}
+                    {% endfor %}
+                    {# Affiche la quantité finale après calcul #}
+                    {{ quantity }}
+                </td>
                 <td>
                     <ul>
                         <li>

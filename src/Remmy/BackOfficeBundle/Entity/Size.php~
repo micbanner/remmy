@@ -38,16 +38,16 @@ class Size
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idSize")
+     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idsize")
      */
-    private $idCategory;
+    private $idcategory;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idCategory = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idcategory = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 }

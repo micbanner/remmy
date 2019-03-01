@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Productstocks list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idstock</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for productstock in productstocks %}
+            <tr>
+                <td><a href="{{ path('productstock_show', { 'idstock': productstock.idstock }) }}">{{ productstock.idstock }}</a></td>
+                <td>{{ productstock.quantity }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('productstock_show', { 'idstock': productstock.idstock }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('productstock_edit', { 'idstock': productstock.idstock }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('productstock_new') }}">Create a new productstock</a>
+        </li>
+    </ul>
+{% endblock %}

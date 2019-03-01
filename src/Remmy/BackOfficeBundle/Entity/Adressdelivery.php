@@ -74,7 +74,7 @@ class Adressdelivery
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
-
+    
         return $this;
     }
 
@@ -98,7 +98,7 @@ class Adressdelivery
     public function setZip($zip)
     {
         $this->zip = $zip;
-
+    
         return $this;
     }
 
@@ -122,7 +122,7 @@ class Adressdelivery
     public function setAdressetype($adressetype = null)
     {
         $this->adressetype = $adressetype;
-
+    
         return $this;
     }
 
@@ -146,7 +146,7 @@ class Adressdelivery
     public function setIduser(\Remmy\BackOfficeBundle\Entity\FosUser $iduser = null)
     {
         $this->iduser = $iduser;
-
+    
         return $this;
     }
 

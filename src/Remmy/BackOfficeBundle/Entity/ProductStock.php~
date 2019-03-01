@@ -48,19 +48,5 @@ class ProductStock
      */
     private $idsize;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="stockstock")
-     */
-    private $productstock;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->productstock = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 }

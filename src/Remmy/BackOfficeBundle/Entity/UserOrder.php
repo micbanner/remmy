@@ -95,7 +95,7 @@ class UserOrder
     public function setDatestart($datestart = null)
     {
         $this->datestart = $datestart;
-
+    
         return $this;
     }
 
@@ -119,7 +119,7 @@ class UserOrder
     public function setDatestop($datestop = null)
     {
         $this->datestop = $datestop;
-
+    
         return $this;
     }
 
@@ -143,7 +143,7 @@ class UserOrder
     public function setStatut($statut)
     {
         $this->statut = $statut;
-
+    
         return $this;
     }
 
@@ -167,7 +167,7 @@ class UserOrder
     public function setQuantitytotal($quantitytotal)
     {
         $this->quantitytotal = $quantitytotal;
-
+    
         return $this;
     }
 
@@ -191,7 +191,7 @@ class UserOrder
     public function setTotalamount($totalamount)
     {
         $this->totalamount = $totalamount;
-
+    
         return $this;
     }
 
@@ -215,7 +215,7 @@ class UserOrder
     public function setTaxes($taxes)
     {
         $this->taxes = $taxes;
-
+    
         return $this;
     }
 
@@ -239,7 +239,7 @@ class UserOrder
     public function setIduser(\Remmy\BackOfficeBundle\Entity\FosUser $iduser = null)
     {
         $this->iduser = $iduser;
-
+    
         return $this;
     }
 

@@ -38,16 +38,16 @@ class Size
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idSize")
+     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idsize")
      */
-    private $idCategory;
+    private $idcategory;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idCategory = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idcategory = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -71,7 +71,7 @@ class Size
     public function setName($name)
     {
         $this->name = $name;
-
+    
         return $this;
     }
 
@@ -95,7 +95,7 @@ class Size
     public function setDescription($description)
     {
         $this->description = $description;
-
+    
         return $this;
     }
 
@@ -110,38 +110,38 @@ class Size
     }
 
     /**
-     * Add idCategory.
+     * Add idcategory.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Category $idCategory
+     * @param \Remmy\BackOfficeBundle\Entity\Category $idcategory
      *
      * @return Size
      */
-    public function addIdCategory(\Remmy\BackOfficeBundle\Entity\Category $idCategory)
+    public function addIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
     {
-        $this->idCategory[] = $idCategory;
-
+        $this->idcategory[] = $idcategory;
+    
         return $this;
     }
 
     /**
-     * Remove idCategory.
+     * Remove idcategory.
      *
-     * @param \Remmy\BackOfficeBundle\Entity\Category $idCategory
+     * @param \Remmy\BackOfficeBundle\Entity\Category $idcategory
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeIdCategory(\Remmy\BackOfficeBundle\Entity\Category $idCategory)
+    public function removeIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
     {
-        return $this->idCategory->removeElement($idCategory);
+        return $this->idcategory->removeElement($idcategory);
     }
 
     /**
-     * Get idCategory.
+     * Get idcategory.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getIdCategory()
+    public function getIdcategory()
     {
-        return $this->idCategory;
+        return $this->idcategory;
     }
 }

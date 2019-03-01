@@ -3,6 +3,8 @@
 
 {% block content %}
 
+  {{dump(productCategoryRepo)}}
+
     <!-- Side Navbar -->
     <nav class="side-navbar">
             <div class="side-navbar-wrapper">
@@ -30,15 +32,17 @@
                   <li><a href="{{ path('product_index') }}"><i class="fas fa-list-ul"></i>All Items</a></li>
                   <li><a href="#collapse_product" aria-expanded="false" data-toggle="collapse"><i class="far fa-arrow-alt-circle-down"></i>Items<div class="badge badge-info">Item</div></a>
                     <ul id="collapse_product" class="collapse">
-                      <li><a href="#">Page</a></li>
-                      <li><a href="#">Page</a></li>
-                      <li><a href="#">Page</a></li>
+                      {#{% for category in productCategoryRepo.findAll() %}
+                      <li><a href="{{ path('product_index', { 'idcategory': category.idcategory }) }}">{{ category.name }}</a></li>
+                      {% endfor %}#}
+
                     </ul>
                   </li>
+
                   <li> <a href="{{ path('category_index') }}"><i class="fas fa-ellipsis-v"></i>Category</a></li>
                   <li> <a href="{{ path('color_index') }}"><i class="fas fa-ellipsis-v"></i>Color</a></li>
                   <li> <a href="{{ path('size_index') }}"><i class="fas fa-ellipsis-v"></i>Size</a></li>
-                  <li> <a href="{{ path('stockproduct_index') }}"><i class="fas fa-ellipsis-v"></i>Stock</a></li>
+                  <li> <a href="{{ path('productstock_index') }}"><i class="fas fa-ellipsis-v"></i>Stock</a></li>
                 </ul>
                 </div><hr>
 

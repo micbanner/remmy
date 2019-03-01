@@ -67,7 +67,7 @@ class InfosPayement
     public function setTypepayement($typepayement)
     {
         $this->typepayement = $typepayement;
-
+    
         return $this;
     }
 
@@ -91,7 +91,7 @@ class InfosPayement
     public function setCardnumber($cardnumber = null)
     {
         $this->cardnumber = $cardnumber;
-
+    
         return $this;
     }
 
@@ -115,7 +115,7 @@ class InfosPayement
     public function setIduser(\Remmy\BackOfficeBundle\Entity\FosUser $iduser = null)
     {
         $this->iduser = $iduser;
-
+    
         return $this;
     }
 

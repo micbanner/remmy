@@ -1,3 +1,7 @@
+remmy_back_office_productstock:
+    resource: "@RemmyBackOfficeBundle/Controller/ProductstockController.php"
+    type:     annotation
+
 remmy_back_office_order_header:
     resource: "@RemmyBackOfficeBundle/Controller/OrderHeaderController.php"
     type:     annotation
@@ -8,10 +12,6 @@ remmy_back_office_order_line:
 
 remmy_back_office_order_header:
     resource: "@RemmyBackOfficeBundle/Controller/OrderHeaderController.php"
-    type:     annotation
-
-remmy_back_office_stock_product:
-    resource: "@RemmyBackOfficeBundle/Controller/StockProductController.php"
     type:     annotation
 
 remmy_back_office_size:

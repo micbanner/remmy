@@ -48,20 +48,6 @@ class ProductStock
      */
     private $idsize;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="stockstock")
-     */
-    private $productstock;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->productstock = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -84,7 +70,7 @@ class ProductStock
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
-
+    
         return $this;
     }
 
@@ -108,7 +94,7 @@ class ProductStock
     public function setIdcolor(\Remmy\BackOfficeBundle\Entity\Color $idcolor = null)
     {
         $this->idcolor = $idcolor;
-
+    
         return $this;
     }
 
@@ -132,7 +118,7 @@ class ProductStock
     public function setIdsize(\Remmy\BackOfficeBundle\Entity\Size $idsize = null)
     {
         $this->idsize = $idsize;
-
+    
         return $this;
     }
 
@@ -144,41 +130,5 @@ class ProductStock
     public function getIdsize()
     {
         return $this->idsize;
-    }
-
-    /**
-     * Add productstock.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $productstock
-     *
-     * @return ProductStock
-     */
-    public function addProductstock(\Remmy\BackOfficeBundle\Entity\Product $productstock)
-    {
-        $this->productstock[] = $productstock;
-
-        return $this;
-    }
-
-    /**
-     * Remove productstock.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $productstock
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeProductstock(\Remmy\BackOfficeBundle\Entity\Product $productstock)
-    {
-        return $this->productstock->removeElement($productstock);
-    }
-
-    /**
-     * Get productstock.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProductstock()
-    {
-        return $this->productstock;
     }
 }
