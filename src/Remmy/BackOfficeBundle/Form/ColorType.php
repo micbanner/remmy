@@ -13,7 +13,10 @@ class ColorType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('codecolor')->add('description')->add('productproduct');
+        $builder->add('name')
+                ->add('codecolor')
+                ->add('description')
+                ->add('productproduct');
     }/**
      * {@inheritdoc}
      */

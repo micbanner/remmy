@@ -41,7 +41,7 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
 
     }
 
-    // line 4
+    // line 5
     public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -50,12 +50,9 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 5
-        echo "
-  ";
         // line 6
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["productCategoryRepo"]) || array_key_exists("productCategoryRepo", $context) ? $context["productCategoryRepo"] : (function () { throw new Twig_Error_Runtime('Variable "productCategoryRepo" does not exist.', 6, $this->source); })()));
         echo "
+  
 
     <!-- Side Navbar -->
     <nav class=\"side-navbar\">
@@ -72,13 +69,13 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
               <!-- Sidebar Navigation Menus-->
               <div class=\"main-menu\">
                 <h5 class=\"sidenav-heading\"><a class=\"navbar-brand\" href=\"";
-        // line 22
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("back_office_admin");
         echo "\">DASHBOARD</a></h5><hr>
                 <h5 class=\"sidenav-heading\">User<div class=\"badge badge-warning\">6 New</div></h5>
                 <ul id=\"side-main-menu\" class=\"side-menu list-unstyled\">
                   <li><a href=\"";
-        // line 25
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_index");
         echo "\"><i class=\"fas fa-ellipsis-v\"></i>All Users</a></li>
                 </ul>
@@ -88,31 +85,26 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
                 <h5 class=\"sidenav-heading\">Product</h5>
                 <ul id=\"side-admin-menu\" class=\"side-menu list-unstyled\"> 
                   <li><a href=\"";
-        // line 32
+        // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
         echo "\"><i class=\"fas fa-list-ul\"></i>All Items</a></li>
-                  <li><a href=\"#collapse_product\" aria-expanded=\"false\" data-toggle=\"collapse\"><i class=\"far fa-arrow-alt-circle-down\"></i>Items<div class=\"badge badge-info\">Item</div></a>
-                    <ul id=\"collapse_product\" class=\"collapse\">
-                      ";
-        // line 38
-        echo "
-                    </ul>
-                  </li>
-
-                  <li> <a href=\"";
+                  ";
         // line 42
+        echo "
+                  <li> <a href=\"";
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
         echo "\"><i class=\"fas fa-ellipsis-v\"></i>Category</a></li>
                   <li> <a href=\"";
-        // line 43
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("color_index");
         echo "\"><i class=\"fas fa-ellipsis-v\"></i>Color</a></li>
                   <li> <a href=\"";
-        // line 44
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("size_index");
         echo "\"><i class=\"fas fa-ellipsis-v\"></i>Size</a></li>
                   <li> <a href=\"";
-        // line 45
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("productstock_index");
         echo "\"><i class=\"fas fa-ellipsis-v\"></i>Stock</a></li>
                 </ul>
@@ -122,7 +114,7 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
                 <h5 class=\"sidenav-heading\">Orders</h5>
                 <ul id=\"side-admin-menu\" class=\"side-menu list-unstyled\">
                     <li><a href=\"";
-        // line 52
+        // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orderheader_index");
         echo "\"><i class=\"fas fa-list-ul\"></i>All</a></li>
                 </ul>
@@ -145,12 +137,12 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
             
             <!-- return home page    -->
             <li class=\"nav-item\"><a href=\"";
-        // line 72
+        // line 73
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
         echo "\" class=\"nav-link logout\"> <span class=\"d-none d-sm-inline-block\">Home page</span><i class=\"fa fa-sign-out\"></i></a></li>
             <!-- Log out-->
             <li class=\"nav-item\"><a href=\"";
-        // line 74
+        // line 75
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_security_logout");
         echo "\" class=\"nav-link logout\"> <span class=\"d-none d-sm-inline-block\">Logout</span><i class=\"fa fa-sign-out\"></i></a></li>
         </ul>
@@ -222,9 +214,9 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
   </section>
 
 ";
-        // line 143
-        $this->displayBlock('body', $context, $blocks);
         // line 144
+        $this->displayBlock('body', $context, $blocks);
+        // line 145
         echo "
 </div>
 ";
@@ -236,7 +228,7 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
 
     }
 
-    // line 143
+    // line 144
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -266,17 +258,18 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
 
     public function getDebugInfo()
     {
-        return array (  240 => 143,  228 => 144,  226 => 143,  154 => 74,  149 => 72,  126 => 52,  116 => 45,  112 => 44,  108 => 43,  104 => 42,  98 => 38,  92 => 32,  82 => 25,  76 => 22,  57 => 6,  54 => 5,  45 => 4,  15 => 1,);
+        return array (  232 => 144,  220 => 145,  218 => 144,  146 => 75,  141 => 73,  118 => 53,  108 => 46,  104 => 45,  100 => 44,  96 => 43,  93 => 42,  89 => 33,  79 => 26,  73 => 23,  54 => 6,  45 => 5,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'back-office.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
 
-  {{dump(productCategoryRepo)}}
+  
 
     <!-- Side Navbar -->
     <nav class=\"side-navbar\">
@@ -303,14 +296,14 @@ class __TwigTemplate_19877b68ee4abfb21a98d2f86c72e3efef38e4acbaa4415c734b48a6316
                 <h5 class=\"sidenav-heading\">Product</h5>
                 <ul id=\"side-admin-menu\" class=\"side-menu list-unstyled\"> 
                   <li><a href=\"{{ path('product_index') }}\"><i class=\"fas fa-list-ul\"></i>All Items</a></li>
-                  <li><a href=\"#collapse_product\" aria-expanded=\"false\" data-toggle=\"collapse\"><i class=\"far fa-arrow-alt-circle-down\"></i>Items<div class=\"badge badge-info\">Item</div></a>
+                  {#<li><a href=\"#collapse_product\" aria-expanded=\"false\" data-toggle=\"collapse\"><i class=\"far fa-arrow-alt-circle-down\"></i>Items<div class=\"badge badge-info\">Item</div></a>
                     <ul id=\"collapse_product\" class=\"collapse\">
-                      {#{% for category in productCategoryRepo.findAll() %}
+                      {% for category in productCategoryRepo.findAll() %}
                       <li><a href=\"{{ path('product_index', { 'idcategory': category.idcategory }) }}\">{{ category.name }}</a></li>
-                      {% endfor %}#}
+                      {% endfor %}
 
                     </ul>
-                  </li>
+                  </li>#}
 
                   <li> <a href=\"{{ path('category_index') }}\"><i class=\"fas fa-ellipsis-v\"></i>Category</a></li>
                   <li> <a href=\"{{ path('color_index') }}\"><i class=\"fas fa-ellipsis-v\"></i>Color</a></li>

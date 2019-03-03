@@ -1,9 +1,10 @@
 {% extends 'back-office.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
 
-  {{dump(productCategoryRepo)}}
+  
 
     <!-- Side Navbar -->
     <nav class="side-navbar">
@@ -30,14 +31,14 @@
                 <h5 class="sidenav-heading">Product</h5>
                 <ul id="side-admin-menu" class="side-menu list-unstyled"> 
                   <li><a href="{{ path('product_index') }}"><i class="fas fa-list-ul"></i>All Items</a></li>
-                  <li><a href="#collapse_product" aria-expanded="false" data-toggle="collapse"><i class="far fa-arrow-alt-circle-down"></i>Items<div class="badge badge-info">Item</div></a>
+                  {#<li><a href="#collapse_product" aria-expanded="false" data-toggle="collapse"><i class="far fa-arrow-alt-circle-down"></i>Items<div class="badge badge-info">Item</div></a>
                     <ul id="collapse_product" class="collapse">
-                      {#{% for category in productCategoryRepo.findAll() %}
+                      {% for category in productCategoryRepo.findAll() %}
                       <li><a href="{{ path('product_index', { 'idcategory': category.idcategory }) }}">{{ category.name }}</a></li>
-                      {% endfor %}#}
+                      {% endfor %}
 
                     </ul>
-                  </li>
+                  </li>#}
 
                   <li> <a href="{{ path('category_index') }}"><i class="fas fa-ellipsis-v"></i>Category</a></li>
                   <li> <a href="{{ path('color_index') }}"><i class="fas fa-ellipsis-v"></i>Color</a></li>

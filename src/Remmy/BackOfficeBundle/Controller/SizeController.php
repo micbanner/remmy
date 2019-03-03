@@ -25,9 +25,17 @@ class SizeController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $sizes = $em->getRepository('RemmyBackOfficeBundle:Size')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('size/index.html.twig', array(
             'sizes' => $sizes,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 

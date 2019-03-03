@@ -1,3 +1,11 @@
+remmy_back_office_order_header:
+    resource: "@RemmyBackOfficeBundle/Controller/OrderHeaderController.php"
+    type:     annotation
+
+remmy_back_office_orderheader:
+    resource: "@RemmyBackOfficeBundle/Controller/orderheaderController.php"
+    type:     annotation
+
 remmy_back_office_productstock:
     resource: "@RemmyBackOfficeBundle/Controller/ProductstockController.php"
     type:     annotation
@@ -26,9 +34,7 @@ remmy_back_office_category:
     resource: "@RemmyBackOfficeBundle/Controller/CategoryController.php"
     type:     annotation
 
-remmy_home:
-    resource: "@RemmyHomeBundle/Resources/config/routing.yml"
-    prefix:   /
+
 front:
     resource: "@RemmyFrontBundle/Resources/config/routing.yml"
     prefix:   /

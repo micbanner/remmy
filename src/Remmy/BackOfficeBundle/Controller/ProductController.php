@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Serializer\Serializer;
 
 use Remmy\BackOfficeBundle\Form\ProductType;
 use Remmy\BackOfficeBundle\Entity\Product;
@@ -57,6 +58,10 @@ class ProductController extends Controller
         $form = $this->createForm('Remmy\BackOfficeBundle\Form\ProductType', $product);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+
         if ($form->isSubmitted() && $form->isValid()) {
 
              /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
@@ -78,6 +83,8 @@ class ProductController extends Controller
 
         return $this->render('product/new.html.twig', array(
             'product' => $product,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
             'form' => $form->createView(),
         ));
     }
@@ -101,6 +108,10 @@ class ProductController extends Controller
      */
     public function showAction(Product $product)
     {
+        $session = $request->getSession();
+
+
+
         $deleteForm = $this->createDeleteForm($product);
 
         $em = $this->getDoctrine()->getManager();
@@ -164,7 +175,6 @@ class ProductController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $product->getImage();
             $em = $this->getDoctrine()->getManager();
             $em->remove($product);
             $em->flush();

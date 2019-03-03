@@ -25,9 +25,17 @@ class ColorController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $colors = $em->getRepository('RemmyBackOfficeBundle:Color')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('color/index.html.twig', array(
             'colors' => $colors,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Product
  *
- * @ORM\Table(name="product", indexes={@ORM\Index(name="category_idCategory", columns={"category_idCategory"})})
+ * @ORM\Table(name="product", indexes={@ORM\Index(name="category_category_idCategory", columns={"category_category_idCategory"}), @ORM\Index(name="category_idCategory", columns={"category_idCategory"})})
  * @ORM\Entity
  */
 class Product
@@ -66,28 +66,6 @@ class Product
      */
     private $categorycategory;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Color", inversedBy="idproduct")
-     * @ORM\JoinTable(name="product_has_color",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="idColor", referencedColumnName="idColor")
-     *   }
-     * )
-     */
-    private $idcolor;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idcolor = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -242,41 +220,5 @@ class Product
     public function getCategorycategory()
     {
         return $this->categorycategory;
-    }
-
-    /**
-     * Add idcolor.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Color $idcolor
-     *
-     * @return Product
-     */
-    public function addIdcolor(\Remmy\BackOfficeBundle\Entity\Color $idcolor)
-    {
-        $this->idcolor[] = $idcolor;
-    
-        return $this;
-    }
-
-    /**
-     * Remove idcolor.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Color $idcolor
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeIdcolor(\Remmy\BackOfficeBundle\Entity\Color $idcolor)
-    {
-        return $this->idcolor->removeElement($idcolor);
-    }
-
-    /**
-     * Get idcolor.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdcolor()
-    {
-        return $this->idcolor;
     }
 }

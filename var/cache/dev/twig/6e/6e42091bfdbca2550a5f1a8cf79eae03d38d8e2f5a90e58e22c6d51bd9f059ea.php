@@ -60,10 +60,10 @@ class __TwigTemplate_a6d731507be26ced85c577b2c657964164251a82bcad3bf4e4676e45f38
     <table class=\"table table-bordered\">
             <thead class=\"thead-dark\">
             <tr>
+                <th>Idcolor</th>
                 <th>Name</th>
                 <th>Codecolor</th>
                 <th>Description</th>
-                <th>Idcolor</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -75,23 +75,21 @@ class __TwigTemplate_a6d731507be26ced85c577b2c657964164251a82bcad3bf4e4676e45f38
         foreach ($context['_seq'] as $context["_key"] => $context["color"]) {
             // line 20
             echo "            <tr>
-                <td><a href=\"";
+                <td>";
             // line 21
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("color_show", ["idcolor" => twig_get_attribute($this->env, $this->source, $context["color"], "idcolor", [])]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "name", []), "html", null, true);
-            echo "</a></td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "idcolor", []), "html", null, true);
+            echo "</td>
                 <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "codecolor", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "name", []), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "description", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "codecolor", []), "html", null, true);
             echo "</td>
                 <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "idcolor", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["color"], "description", []), "html", null, true);
             echo "</td>
                 <td>
                     <ul>
@@ -140,7 +138,7 @@ class __TwigTemplate_a6d731507be26ced85c577b2c657964164251a82bcad3bf4e4676e45f38
 
     public function getDebugInfo()
     {
-        return array (  119 => 37,  107 => 31,  101 => 28,  94 => 24,  90 => 23,  86 => 22,  80 => 21,  77 => 20,  73 => 19,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  117 => 37,  105 => 31,  99 => 28,  92 => 24,  88 => 23,  84 => 22,  80 => 21,  77 => 20,  73 => 19,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -155,20 +153,20 @@ class __TwigTemplate_a6d731507be26ced85c577b2c657964164251a82bcad3bf4e4676e45f38
     <table class=\"table table-bordered\">
             <thead class=\"thead-dark\">
             <tr>
+                <th>Idcolor</th>
                 <th>Name</th>
                 <th>Codecolor</th>
                 <th>Description</th>
-                <th>Idcolor</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for color in colors %}
             <tr>
-                <td><a href=\"{{ path('color_show', { 'idcolor': color.idcolor }) }}\">{{ color.name }}</a></td>
+                <td>{{ color.idcolor }}</td>
+                <td>{{ color.name }}</td>
                 <td>{{ color.codecolor }}</td>
                 <td>{{ color.description }}</td>
-                <td>{{ color.idcolor }}</td>
                 <td>
                     <ul>
                         <li>

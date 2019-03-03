@@ -3,42 +3,42 @@
 {% block body %}
     <h1>User</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Gender</th>
+                <th>{{ 'form.gender'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.gender }}</td>
             </tr>
             <tr>
-                <th>Firstname</th>
+                <th>{{ 'profile.show.firstname'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.firstname }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>{{ 'profile.show.lastname'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.lastname }}</td>
             </tr>
             <tr>
-                <th>Address</th>
+                <th>{{ 'profile.show.address'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.address }}</td>
             </tr>
             <tr>
-                <th>Zipcode</th>
+                <th>{{ 'profile.show.zipcode'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.zipCode }}</td>
             </tr>
             <tr>
-                <th>City</th>
+                <th>{{ 'profile.show.city'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.city }}</td>
             </tr>
             <tr>
-                <th>Country</th>
+                <th>{{ 'profile.show.country'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.country }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th>{{ 'profile.show.phone'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.phone }}</td>
             </tr>
         </tbody>

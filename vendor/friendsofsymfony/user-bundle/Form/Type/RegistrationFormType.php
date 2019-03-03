@@ -43,6 +43,7 @@ class RegistrationFormType extends AbstractType
             ->add('firstname', null, array('label' => 'profile.show.firstname', 'translation_domain' => 'FOSUserBundle'))
             ->add('lastname', null, array('label' => 'profile.show.lastname', 'translation_domain' => 'FOSUserBundle'))
             ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
+            ->add('email', null, array('label' => 'profile.show.phone', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'options' => array(
@@ -55,10 +56,10 @@ class RegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'form.password_confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('address', null, array('label' => 'form.address', 'translation_domain' => 'FOSUserBundle'))
-            ->add('zipCode', null, array('label' => 'form.zipCode', 'translation_domain' => 'FOSUserBundle'))
-            ->add('city', null, array('label' => 'form.city', 'translation_domain' => 'FOSUserBundle'))
-            ->add('country', null, array('label' => 'form.country', 'translation_domain' => 'FOSUserBundle'))
+            ->add('address', null, array('label' => 'profile.show.address', 'translation_domain' => 'FOSUserBundle'))
+            ->add('zipCode', null, array('label' => 'profile.show.zipcode', 'translation_domain' => 'FOSUserBundle'))
+            ->add('city', null, array('label' => 'profile.show.city', 'translation_domain' => 'FOSUserBundle'))
+            ->add('country', null, array('label' => 'profile.show.country', 'translation_domain' => 'FOSUserBundle'))
         ;
     }
 

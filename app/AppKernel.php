@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-            new Remmy\HomeBundle\RemmyHomeBundle(),
             new Remmy\FrontBundle\RemmyFrontBundle(),
             new Remmy\BackOfficeBundle\RemmyBackOfficeBundle(),
             new Remmy\MainBundle\RemmyMainBundle(),

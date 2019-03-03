@@ -17,7 +17,6 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
-      <parameter key="RemmyHomeBundle">Remmy\HomeBundle\RemmyHomeBundle</parameter>
       <parameter key="RemmyFrontBundle">Remmy\FrontBundle\RemmyFrontBundle</parameter>
       <parameter key="RemmyBackOfficeBundle">Remmy\BackOfficeBundle\RemmyBackOfficeBundle</parameter>
       <parameter key="RemmyMainBundle">Remmy\MainBundle\RemmyMainBundle</parameter>
@@ -67,11 +66,6 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\xampp\htdocs\symfony\Remmy\vendor\friendsofsymfony\user-bundle</parameter>
         <parameter key="namespace">FOS\UserBundle</parameter>
-      </parameter>
-      <parameter key="RemmyHomeBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">C:\xampp\htdocs\symfony\Remmy\src\Remmy\HomeBundle</parameter>
-        <parameter key="namespace">Remmy\HomeBundle</parameter>
       </parameter>
       <parameter key="RemmyFrontBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -3794,14 +3788,6 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\symfony\Remmy\vendor\friendsofsymfony\user-bundle/Resources/views</argument>
         <argument>!FOSUser</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\xampp\htdocs\symfony\Remmy\src\Remmy\HomeBundle/Resources/views</argument>
-        <argument>RemmyHome</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\xampp\htdocs\symfony\Remmy\src\Remmy\HomeBundle/Resources/views</argument>
-        <argument>!RemmyHome</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\symfony\Remmy\src\Remmy\FrontBundle/Resources/views</argument>

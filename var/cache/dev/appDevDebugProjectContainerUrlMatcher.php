@@ -107,6 +107,67 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/orderheader')) {
+            // orderheader_index
+            if ('/orderheader' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::indexAction',  '_route' => 'orderheader_index',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_orderheader_index;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'orderheader_index'));
+                }
+
+                return $ret;
+            }
+            not_orderheader_index:
+
+            // orderheader_new
+            if ('/orderheader/new' === $pathinfo) {
+                return array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::newAction',  '_route' => 'orderheader_new',);
+            }
+
+            // orderheader_show
+            if (preg_match('#^/orderheader/(?P<idorder>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderheader_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::showAction',));
+            }
+
+            // orderheader_edit
+            if (preg_match('#^/orderheader/(?P<idorder>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderheader_edit']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::editAction',));
+            }
+
+            // orderheader_delete
+            if (preg_match('#^/orderheader/(?P<idorder>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderheader_delete']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::deleteAction',));
+            }
+
+        }
+
+        elseif (0 === strpos($pathinfo, '/orderline')) {
+            // orderline_index
+            if ('/orderline' === $trimmedPathinfo) {
+                $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderLineController::indexAction',  '_route' => 'orderline_index',);
+                if ('/' === substr($pathinfo, -1)) {
+                    // no-op
+                } elseif ('GET' !== $canonicalMethod) {
+                    goto not_orderline_index;
+                } else {
+                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'orderline_index'));
+                }
+
+                return $ret;
+            }
+            not_orderline_index:
+
+            // orderline_show
+            if (preg_match('#^/orderline/(?P<idorderline>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderline_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderLineController::showAction',));
+            }
+
+        }
+
         elseif (0 === strpos($pathinfo, '/pro')) {
             if (0 === strpos($pathinfo, '/productstock')) {
                 // productstock_index
@@ -147,9 +208,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // front_product_retail
-            if ('/product' === $pathinfo) {
-                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ProductRetailController::RetailAction',  '_route' => 'front_product_retail',);
+            if ('/productretail' === $pathinfo) {
+                $ret = array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ProductRetailController::RetailAction',  '_route' => 'front_product_retail',);
+                if (!in_array($canonicalMethod, ['GET'])) {
+                    $allow = array_merge($allow, ['GET']);
+                    goto not_front_product_retail;
+                }
+
+                return $ret;
             }
+            not_front_product_retail:
 
             if (0 === strpos($pathinfo, '/profile')) {
                 // fos_user_profile_show
@@ -196,52 +264,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
                 not_fos_user_change_password:
 
-            }
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/orderheader')) {
-            // orderheader_index
-            if ('/orderheader' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::indexAction',  '_route' => 'orderheader_index',);
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif ('GET' !== $canonicalMethod) {
-                    goto not_orderheader_index;
-                } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'orderheader_index'));
-                }
-
-                return $ret;
-            }
-            not_orderheader_index:
-
-            // orderheader_show
-            if (preg_match('#^/orderheader/(?P<idorder>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderheader_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderHeaderController::showAction',));
-            }
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/orderline')) {
-            // orderline_index
-            if ('/orderline' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderLineController::indexAction',  '_route' => 'orderline_index',);
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif ('GET' !== $canonicalMethod) {
-                    goto not_orderline_index;
-                } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'orderline_index'));
-                }
-
-                return $ret;
-            }
-            not_orderline_index:
-
-            // orderline_show
-            if (preg_match('#^/orderline/(?P<idorderline>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'orderline_show']), array (  '_controller' => 'Remmy\\BackOfficeBundle\\Controller\\OrderLineController::showAction',));
             }
 
         }
@@ -479,12 +501,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // aboutPage
         if ('/about' === $pathinfo) {
-            return array (  '_controller' => 'Remmy\\HomeBundle\\Controller\\HomeController::aboutAction',  '_route' => 'aboutPage',);
+            return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\HomeController::aboutAction',  '_route' => 'aboutPage',);
+        }
+
+        if (0 === strpos($pathinfo, '/user')) {
+            // front_homepage
+            if ('/user' === $pathinfo) {
+                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'front_homepage',);
+            }
+
+            // front_shoppingCard
+            if ('/user/card' === $pathinfo) {
+                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ShoppingCardController::shoppingAction',  '_route' => 'front_shoppingCard',);
+            }
+
         }
 
         // homepage
         if ('' === $trimmedPathinfo) {
-            $ret = array (  '_controller' => 'Remmy\\HomeBundle\\Controller\\HomeController::indexAction',  '_route' => 'homepage',);
+            $ret = array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\HomeController::indexAction',  '_route' => 'homepage',);
             if ('/' === substr($pathinfo, -1)) {
                 // no-op
             } elseif ('GET' !== $canonicalMethod) {
@@ -504,33 +539,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // cgvPage
         if ('/cgv' === $pathinfo) {
-            return array (  '_controller' => 'Remmy\\HomeBundle\\Controller\\HomeController::cgvAction',  '_route' => 'cgvPage',);
+            return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\HomeController::cgvAction',  '_route' => 'cgvPage',);
         }
 
         // contactPage
         if ('/contact' === $pathinfo) {
-            return array (  '_controller' => 'Remmy\\HomeBundle\\Controller\\HomeController::contactAction',  '_route' => 'contactPage',);
+            return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\HomeController::contactAction',  '_route' => 'contactPage',);
         }
 
         // sitemapPage
         if ('/sitemap' === $pathinfo) {
-            return array (  '_controller' => 'Remmy\\HomeBundle\\Controller\\HomeController::sitemapAction',  '_route' => 'sitemapPage',);
+            return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\HomeController::sitemapAction',  '_route' => 'sitemapPage',);
         }
 
-        if (0 === strpos($pathinfo, '/user')) {
-            // front_homepage
-            if ('/user' === $pathinfo) {
-                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'front_homepage',);
-            }
-
-            // front_shoppingCard
-            if ('/user/card' === $pathinfo) {
-                return array (  '_controller' => 'Remmy\\FrontBundle\\Controller\\ShoppingCardController::shoppingAction',  '_route' => 'front_shoppingCard',);
-            }
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/login')) {
+        if (0 === strpos($pathinfo, '/login')) {
             // fos_user_security_login
             if ('/login' === $pathinfo) {
                 $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

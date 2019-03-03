@@ -1,7 +1,8 @@
 {% extends 'admin-base.html.twig' %}
 
 {% block body %}
-    <h1>Order Retail</h1>
+    <h1>Order</h1>
+
     {{dump(orderHeader)}}
     {{dump(orderLines)}}
 
@@ -9,9 +10,7 @@
 <h3>Creationdate: {% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</h3>
 <h4>Lastupdate: {% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}Idorder: {{ orderHeader.idorder }}</h4>
 
-
 <h3>Username: <a href="{{ path('admin_user_show', {'id': orderHeader.iduser.id }) }}">{{orderHeader.iduser.username}}</a></h3>
-
 
 
 <table class="table table-bordered">
@@ -26,6 +25,7 @@
                 <th>Taxe amount</th>
                 <th>Actions</th>
             </tr>
+        </thead>
         <tbody>
             {% for orderLine in orderLines %}
             <tr>
@@ -46,11 +46,19 @@
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+</table>
 
     <ul>
         <li>
             <a href="{{ path('orderheader_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('orderheader_edit', { 'idorder': orderHeader.idorder }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}

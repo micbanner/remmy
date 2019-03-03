@@ -25,9 +25,17 @@ class CategoryController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $categories = $em->getRepository('RemmyBackOfficeBundle:Category')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('category/index.html.twig', array(
             'categories' => $categories,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 

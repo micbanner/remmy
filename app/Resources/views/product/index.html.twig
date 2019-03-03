@@ -2,14 +2,15 @@
 
 {% block body %}
 <a href="{{ path('product_new') }}" class="btn btn-success">Create a new product</a><hr>
-<h1>All List</h1>
+<h1>All Products</h1>
 
-{{dump(request)}}
+{#{dump(request)}#}
 
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr>
                 <th>Id</th>
+                <th>Category</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
@@ -34,9 +35,12 @@
             {% endif %}
 
         {% for product in products %}
+            {% set quantity = 0 %}
+            {{dump(productCategoryRepo.findOneByidcategory(product.categorycategoryidcategory))}}
             {{dump(product)}}
             <tr>
                 <td>{{ product.idProduct }}</td>
+                <td>{#{ .name }#}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
                 <td><a href="{{ asset('uploads/images_products/' ~ product.image) }}" ><img src="{{ asset('uploads/images_products/' ~ product.image) }}" class="img_size" alt="remmy product"></a></td>
@@ -44,6 +48,7 @@
                 <td>{{ product.price }}</td>
                 <td>
                     {% for stock in productHasStocksRepo.findByidproduct(product.idproduct) %}
+                    {#{dump(productHasStocksRepo.findByidproduct(product.idproduct))}#}
                     {# Boucle sur chaque ligne de #}
                     {% set quantity = quantity + productStocksRepo.findByidstock(stock.idstock)[0].quantity %}
                     {% endfor %}

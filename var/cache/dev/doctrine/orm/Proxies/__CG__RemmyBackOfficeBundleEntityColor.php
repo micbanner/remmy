@@ -64,10 +64,10 @@ class Color extends \Remmy\BackOfficeBundle\Entity\Color implements \Doctrine\OR
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'codecolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idproduct'];
+            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'codecolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'description'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'codecolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idproduct'];
+        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'idcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'codecolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Color' . "\0" . 'description'];
     }
 
     /**
@@ -252,39 +252,6 @@ class Color extends \Remmy\BackOfficeBundle\Entity\Color implements \Doctrine\OR
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
 
         return parent::getDescription();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdproduct', [$idproduct]);
-
-        return parent::addIdproduct($idproduct);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdproduct', [$idproduct]);
-
-        return parent::removeIdproduct($idproduct);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdproduct()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdproduct', []);
-
-        return parent::getIdproduct();
     }
 
 }

@@ -28,9 +28,17 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $users = $em->getRepository('RemmyMainBundle:User')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('user/index.html.twig', array(
             'users' => $users,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 

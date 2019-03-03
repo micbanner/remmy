@@ -1,0 +1,77 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BasketLine
+ *
+ * @ORM\Table(name="basket_line", indexes={@ORM\Index(name="idbasket", columns={"idbasket"})})
+ * @ORM\Entity
+ */
+class BasketLine
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idLine", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idline;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idColor", type="integer", nullable=false)
+     */
+    private $idcolor;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idOrder", type="integer", nullable=false)
+     */
+    private $idorder;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idSize", type="integer", nullable=false)
+     */
+    private $idsize;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantity", type="integer", nullable=false)
+     */
+    private $quantity;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="taxable", type="integer", nullable=false)
+     */
+    private $taxable;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="taxeamount", type="integer", nullable=false)
+     */
+    private $taxeamount;
+
+    /**
+     * @var \Basket
+     *
+     * @ORM\ManyToOne(targetEntity="Basket")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idbasket", referencedColumnName="idbasket")
+     * })
+     */
+    private $idbasket;
+
+
+}

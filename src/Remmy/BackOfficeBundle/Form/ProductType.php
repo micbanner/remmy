@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use Remmy\BackOfficeBundle\Entity\Product;
+use Remmy\BackOfficeBundle\Entity\Color;
 
 class ProductType extends AbstractType
 {
@@ -19,7 +20,7 @@ class ProductType extends AbstractType
     {
         $builder->add('name', TextType::class, array('data_class' => null))
                 ->add('description', TextType::class, array('data_class' => null))
-                ->add('image', FileType::class, array('data_class' => null), ['label' => 'image (jpeg file)'])
+                ->add('image', FileType::class, array('data_class' => null), ['label' => 'image (jpeg,jpg or png file)'])
                 ->add('price', TextType::class, array('data_class' => null));
     }
     

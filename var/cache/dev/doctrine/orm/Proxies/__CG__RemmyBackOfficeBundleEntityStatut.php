@@ -173,41 +173,4 @@ class Statut extends \Remmy\BackOfficeBundle\Entity\Statut implements \Doctrine\
     }
 
     
-    /**
-     * {@inheritDoc}
-     */
-    public function getCode()
-    {
-        if ($this->__isInitialized__ === false) {
-            return  parent::getCode();
-        }
-
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCode', []);
-
-        return parent::getCode();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setDescription($description)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescription', [$description]);
-
-        return parent::setDescription($description);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDescription()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
-
-        return parent::getDescription();
-    }
-
 }

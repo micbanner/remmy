@@ -1,0 +1,45 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProductHasColor
+ *
+ * @ORM\Table(name="product_has_color", indexes={@ORM\Index(name="idProduct", columns={"idProduct"}), @ORM\Index(name="idColor", columns={"idColor"})})
+ * @ORM\Entity
+ */
+class ProductHasColor
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Color
+     *
+     * @ORM\ManyToOne(targetEntity="Color")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idColor", referencedColumnName="idColor")
+     * })
+     */
+    private $idcolor;
+
+    /**
+     * @var \Product
+     *
+     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
+     * })
+     */
+    private $idproduct;
+
+
+}

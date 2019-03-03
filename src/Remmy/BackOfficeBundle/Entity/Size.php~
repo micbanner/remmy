@@ -35,19 +35,5 @@ class Size
      */
     private $description;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idsize")
-     */
-    private $idcategory;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idcategory = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 }

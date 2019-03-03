@@ -2,15 +2,16 @@
 
 {% block body %}
     <h1>Order List</h1>
-        
-            <h3>Idorder</h3> 
-            <h3>Creationdate</h3>
-            <h3>Lastupdate</h3> 
-            <h3></h3> 
-
-            <th>Actions</th>
 
     <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Idorder</th>
+                <th>Creationdate</th>
+                <th>Lastupdate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
         <tbody>
         {% for orderHeader in orderHeaders %}
             <tr>
@@ -22,6 +23,9 @@
                         <li>
                             <a href="{{ path('orderheader_show', { 'idorder': orderHeader.idorder }) }}">show</a>
                         </li>
+                        <li>
+                            <a href="{{ path('orderheader_edit', { 'idorder': orderHeader.idorder }) }}">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -29,5 +33,9 @@
         </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href="{{ path('orderheader_new') }}">Create a new orderHeader</a>
+        </li>
+    </ul>
 {% endblock %}

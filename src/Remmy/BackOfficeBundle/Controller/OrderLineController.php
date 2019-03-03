@@ -25,9 +25,17 @@ class OrderLineController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $orderLines = $em->getRepository('RemmyBackOfficeBundle:OrderLine')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('orderline/index.html.twig', array(
             'orderLines' => $orderLines,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 

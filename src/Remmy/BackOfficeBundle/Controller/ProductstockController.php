@@ -25,9 +25,17 @@ class ProductstockController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $productstocks = $em->getRepository('RemmyBackOfficeBundle:Productstock')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
 
         return $this->render('productstock/index.html.twig', array(
             'productstocks' => $productstocks,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
         ));
     }
 
@@ -43,6 +51,14 @@ class ProductstockController extends Controller
         $form = $this->createForm('Remmy\BackOfficeBundle\Form\ProductstockType', $productstock);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $productstocks = $em->getRepository('RemmyBackOfficeBundle:Productstock')->findAll();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $productStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductStock');
+        $productHasStocksRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasStock');
+        $productCategoryRepo = $em->getRepository('RemmyBackOfficeBundle:Category');
+
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($productstock);
@@ -53,6 +69,10 @@ class ProductstockController extends Controller
 
         return $this->render('productstock/new.html.twig', array(
             'productstock' => $productstock,
+            'productsRepo' => $productsRepo,
+            'productStocksRepo' => $productStocksRepo,
+            'productHasStocksRepo' => $productHasStocksRepo,
+            'productCategoryRepo' => $productCategoryRepo,
             'form' => $form->createView(),
         ));
     }
@@ -67,8 +87,17 @@ class ProductstockController extends Controller
     {
         $deleteForm = $this->createDeleteForm($productstock);
 
+        $em = $this->getDoctrine()->getManager();
+        $productsRepo = $em->getRepository('RemmyBackOfficeBundle:Product');
+        $colorsRepo = $em->getRepository('RemmyBackOfficeBundle:Color');
+        $sizeRepo = $em->getRepository('RemmyBackOfficeBundle:Size');
+        $productHasColorRepo = $em->getRepository('RemmyBackOfficeBundle:ProductHasColor');
+
         return $this->render('productstock/show.html.twig', array(
             'productstock' => $productstock,
+            'productsRepo' => $productsRepo,
+            'sizeRepo' => $sizeRepo,
+            'productHasColorRepo' => $productHasColorRepo,
             'delete_form' => $deleteForm->createView(),
         ));
     }

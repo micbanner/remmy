@@ -57,7 +57,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
     <link rel=\"stylesheet\" href=\"";
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/ui.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\"/> />
+        echo "\" rel=\"stylesheet\" type=\"text/css\"/>
     <link rel=\"stylesheet\" href=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/retails.css"), "html", null, true);
@@ -78,7 +78,10 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
   </head>
 
   <body>
-
+";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 26, $this->source); })()), "session", []));
+        echo "
       <div class=\"container\">
         <nav class=\"navbar navbar-expand-md \">
                 <a class=\"navbar-brand\" href=\"";
@@ -452,7 +455,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
 
     public function getDebugInfo()
     {
-        return array (  427 => 180,  358 => 120,  354 => 119,  327 => 97,  316 => 89,  303 => 81,  290 => 73,  280 => 66,  265 => 61,  248 => 59,  230 => 56,  212 => 22,  194 => 20,  178 => 183,  174 => 181,  172 => 180,  169 => 179,  167 => 61,  164 => 60,  162 => 59,  158 => 57,  156 => 56,  145 => 48,  142 => 47,  135 => 46,  128 => 45,  119 => 42,  112 => 41,  103 => 40,  100 => 39,  98 => 38,  86 => 29,  76 => 22,  73 => 21,  71 => 20,  63 => 15,  59 => 14,  55 => 13,  51 => 12,  45 => 9,  35 => 1,);
+        return array (  430 => 180,  361 => 120,  357 => 119,  330 => 97,  319 => 89,  306 => 81,  293 => 73,  283 => 66,  268 => 61,  251 => 59,  233 => 56,  215 => 22,  197 => 20,  181 => 183,  177 => 181,  175 => 180,  172 => 179,  170 => 61,  167 => 60,  165 => 59,  161 => 57,  159 => 56,  148 => 48,  145 => 47,  138 => 46,  131 => 45,  122 => 42,  115 => 41,  106 => 40,  103 => 39,  101 => 38,  89 => 29,  83 => 26,  76 => 22,  73 => 21,  71 => 20,  63 => 15,  59 => 14,  55 => 13,  51 => 12,  45 => 9,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -470,7 +473,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
     <!--asset CSS-->
     <link rel=\"stylesheet\" href=\"{{ asset('css/general.css') }}\" />
     <link rel=\"stylesheet\" href=\"{{ asset('css/ShoppingCar.css') }}\" />
-    <link rel=\"stylesheet\" href=\"{{ asset('css/ui.css') }}\" rel=\"stylesheet\" type=\"text/css\"/> />
+    <link rel=\"stylesheet\" href=\"{{ asset('css/ui.css') }}\" rel=\"stylesheet\" type=\"text/css\"/>
     <link rel=\"stylesheet\" href=\"{{ asset('css/retails.css') }}\" />
 
     <!-- Font Awsome -->
@@ -482,7 +485,7 @@ class __TwigTemplate_54de69bae46782497827fdbc3ea88e481aa43a3afc12d0abec57c6b32f4
   </head>
 
   <body>
-
+{{dump(app.session)}}
       <div class=\"container\">
         <nav class=\"navbar navbar-expand-md \">
                 <a class=\"navbar-brand\" href=\"{{ path('homepage') }}\">REMMY</a>

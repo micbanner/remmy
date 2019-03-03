@@ -42,19 +42,5 @@ class Color
      */
     private $description;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="idcolor")
-     */
-    private $idproduct;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idproduct = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 }

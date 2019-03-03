@@ -3,19 +3,19 @@
 {% block body %}
     <h1>Size</h1>
 
-    <table>
+    <table class="table table-bordered">
         <tbody>
+            <tr>
+                <th>Idsize</th>
+                <td>{{ size.idsize }}</td>
+            </tr>
             <tr>
                 <th>Name</th>
                 <td>{{ size.name }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                    <th>Description</th>
                 <td>{{ size.description }}</td>
-            </tr>
-            <tr>
-                <th>Idsize</th>
-                <td>{{ size.idsize }}</td>
             </tr>
         </tbody>
     </table>

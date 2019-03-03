@@ -56,7 +56,6 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
             <thead class=\"thead-dark\">
             <tr>
                 <th>Id</th>
-                <th>Gender</th>
                 <th>Username</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
@@ -70,63 +69,59 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
         </thead>
         <tbody>
         ";
-        // line 23
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 22, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 24
+            // line 23
             echo "            <tr>
                 <td>";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "gender", []), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 27
+            // line 25
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "Username", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 28
+            // line 26
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 29
+            // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 30
+            // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "address", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 31
+            // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "zipCode", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 32
+            // line 30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "city", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 33
+            // line 31
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "country", []), "html", null, true);
             echo "</td>
                 <td>";
-            // line 34
+            // line 32
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "phone", []), "html", null, true);
             echo "</td>
                 <td>
                     <ul>
                         <li>
                             <a href=\"";
-            // line 38
+            // line 36
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_show", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [])]), "html", null, true);
             echo "\">show</a>
                         </li>
                         <li>
                             <a href=\"";
-            // line 41
+            // line 39
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", [])]), "html", null, true);
             echo "\">edit</a>
                         </li>
@@ -138,7 +133,7 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 45
         echo "        </tbody>
     </table>
 
@@ -163,7 +158,7 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
 
     public function getDebugInfo()
     {
-        return array (  142 => 47,  130 => 41,  124 => 38,  117 => 34,  113 => 33,  109 => 32,  105 => 31,  101 => 30,  97 => 29,  93 => 28,  89 => 27,  85 => 26,  81 => 25,  78 => 24,  74 => 23,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  137 => 45,  125 => 39,  119 => 36,  112 => 32,  108 => 31,  104 => 30,  100 => 29,  96 => 28,  92 => 27,  88 => 26,  84 => 25,  80 => 24,  77 => 23,  73 => 22,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -177,7 +172,6 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
             <thead class=\"thead-dark\">
             <tr>
                 <th>Id</th>
-                <th>Gender</th>
                 <th>Username</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
@@ -193,7 +187,6 @@ class __TwigTemplate_1863d36b89297830a84da7d7f05c6df7fb26565d0df3e23e8417a9afedc
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.gender }}</td>
                 <td>{{ user.Username }}</td>
                 <td>{{ user.firstname }}</td>
                 <td>{{ user.lastname }}</td>

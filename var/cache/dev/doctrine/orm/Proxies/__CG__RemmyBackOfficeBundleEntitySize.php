@@ -64,10 +64,10 @@ class Size extends \Remmy\BackOfficeBundle\Entity\Size implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idcategory'];
+            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idcategory'];
+        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'idsize', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Size' . "\0" . 'description'];
     }
 
     /**
@@ -230,39 +230,6 @@ class Size extends \Remmy\BackOfficeBundle\Entity\Size implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescription', []);
 
         return parent::getDescription();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addIdcategory', [$idcategory]);
-
-        return parent::addIdcategory($idcategory);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeIdcategory', [$idcategory]);
-
-        return parent::removeIdcategory($idcategory);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getIdcategory()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIdcategory', []);
-
-        return parent::getIdcategory();
     }
 
 }

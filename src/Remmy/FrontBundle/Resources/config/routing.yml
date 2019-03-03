@@ -7,5 +7,27 @@ front_shoppingCard:
     defaults: { _controller: RemmyFrontBundle:ShoppingCard:shopping }
 
 front_product_retail:
-    path:     /product
+    path:     /productretail
     defaults: { _controller: RemmyFrontBundle:ProductRetail:Retail}
+    methods:  GET
+
+homepage:
+    path:     /
+    defaults: { _controller: RemmyFrontBundle:Home:index }
+    methods:  GET
+
+aboutPage:
+    path:     /about
+    defaults: { _controller: RemmyFrontBundle:Home:about }
+
+cgvPage:
+    path:     /cgv
+    defaults: { _controller: RemmyFrontBundle:Home:cgv }
+
+contactPage:
+    path:     /contact
+    defaults: { _controller: RemmyFrontBundle:Home:contact }
+
+sitemapPage:
+    path:     /sitemap
+    defaults: { _controller: RemmyFrontBundle:Home:sitemap }

@@ -64,10 +64,10 @@ class Product extends \Remmy\BackOfficeBundle\Entity\Product implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'idproduct', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'image', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'price', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categoryCategoryIdcategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categorycategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'colorcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'stockstock'];
+            return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'idproduct', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'image', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'price', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categoryCategoryIdcategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categorycategory'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'idproduct', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'image', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'price', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categoryCategoryIdcategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categorycategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'colorcolor', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'stockstock'];
+        return ['__isInitialized__', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'idproduct', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'name', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'description', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'image', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'price', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categoryCategoryIdcategory', '' . "\0" . 'Remmy\\BackOfficeBundle\\Entity\\Product' . "\0" . 'categorycategory'];
     }
 
     /**
@@ -318,72 +318,6 @@ class Product extends \Remmy\BackOfficeBundle\Entity\Product implements \Doctrin
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCategorycategory', []);
 
         return parent::getCategorycategory();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addColorcolor(\Remmy\BackOfficeBundle\Entity\Color $colorcolor)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addColorcolor', [$colorcolor]);
-
-        return parent::addColorcolor($colorcolor);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeColorcolor(\Remmy\BackOfficeBundle\Entity\Color $colorcolor)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeColorcolor', [$colorcolor]);
-
-        return parent::removeColorcolor($colorcolor);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getColorcolor()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getColorcolor', []);
-
-        return parent::getColorcolor();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function addStockstock(\Remmy\BackOfficeBundle\Entity\ProductStock $stockstock)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addStockstock', [$stockstock]);
-
-        return parent::addStockstock($stockstock);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function removeStockstock(\Remmy\BackOfficeBundle\Entity\ProductStock $stockstock)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeStockstock', [$stockstock]);
-
-        return parent::removeStockstock($stockstock);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getStockstock()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStockstock', []);
-
-        return parent::getStockstock();
     }
 
 }

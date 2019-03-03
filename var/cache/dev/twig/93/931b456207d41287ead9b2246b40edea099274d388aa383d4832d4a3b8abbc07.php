@@ -50,35 +50,35 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Order Retail</h1>
-    ";
-        // line 5
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 5, $this->source); })()));
-        echo "
+        echo "    <h1>Order</h1>
+
     ";
         // line 6
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["orderLines"]) || array_key_exists("orderLines", $context) ? $context["orderLines"] : (function () { throw new Twig_Error_Runtime('Variable "orderLines" does not exist.', 6, $this->source); })()));
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 6, $this->source); })()));
+        echo "
+    ";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["orderLines"]) || array_key_exists("orderLines", $context) ? $context["orderLines"] : (function () { throw new Twig_Error_Runtime('Variable "orderLines" does not exist.', 7, $this->source); })()));
         echo "
 
 <h3>Idorder: ";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 8, $this->source); })()), "idorder", []), "html", null, true);
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 9, $this->source); })()), "idorder", []), "html", null, true);
         echo "</h3>
 <h3>Creationdate: ";
-        // line 9
-        if (twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 9, $this->source); })()), "creationdate", [])) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 9, $this->source); })()), "creationdate", []), "Y-m-d"), "html", null, true);
+        // line 10
+        if (twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 10, $this->source); })()), "creationdate", [])) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 10, $this->source); })()), "creationdate", []), "Y-m-d"), "html", null, true);
         }
         echo "</h3>
 <h4>Lastupdate: ";
-        // line 10
-        if (twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 10, $this->source); })()), "lastUpdate", [])) {
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 10, $this->source); })()), "lastUpdate", []), "Y-m-d"), "html", null, true);
+        // line 11
+        if (twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 11, $this->source); })()), "lastUpdate", [])) {
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 11, $this->source); })()), "lastUpdate", []), "Y-m-d"), "html", null, true);
         }
         echo "Idorder: ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 10, $this->source); })()), "idorder", []), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 11, $this->source); })()), "idorder", []), "html", null, true);
         echo "</h4>
-
 
 <h3>Username: <a href=\"";
         // line 13
@@ -86,7 +86,6 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
         echo "\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 13, $this->source); })()), "iduser", []), "username", []), "html", null, true);
         echo "</a></h3>
-
 
 
 <table class=\"table table-bordered\">
@@ -101,6 +100,7 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
                 <th>Taxe amount</th>
                 <th>Actions</th>
             </tr>
+        </thead>
         <tbody>
             ";
         // line 30
@@ -161,7 +161,7 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 48
         echo "        </tbody>
-    </table>
+</table>
 
     <ul>
         <li>
@@ -169,6 +169,23 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
         // line 53
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orderheader_index");
         echo "\">Back to the list</a>
+        </li>
+        <li>
+            <a href=\"";
+        // line 56
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orderheader_edit", ["idorder" => twig_get_attribute($this->env, $this->source, (isset($context["orderHeader"]) || array_key_exists("orderHeader", $context) ? $context["orderHeader"] : (function () { throw new Twig_Error_Runtime('Variable "orderHeader" does not exist.', 56, $this->source); })()), "idorder", [])]), "html", null, true);
+        echo "\">Edit</a>
+        </li>
+        <li>
+            ";
+        // line 59
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 59, $this->source); })()), 'form_start');
+        echo "
+                <input type=\"submit\" value=\"Delete\">
+            ";
+        // line 61
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["delete_form"]) || array_key_exists("delete_form", $context) ? $context["delete_form"] : (function () { throw new Twig_Error_Runtime('Variable "delete_form" does not exist.', 61, $this->source); })()), 'form_end');
+        echo "
         </li>
     </ul>
 ";
@@ -192,7 +209,7 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
 
     public function getDebugInfo()
     {
-        return array (  170 => 53,  163 => 48,  151 => 42,  144 => 38,  136 => 37,  132 => 36,  128 => 35,  124 => 34,  120 => 33,  114 => 32,  111 => 31,  107 => 30,  85 => 13,  75 => 10,  69 => 9,  65 => 8,  60 => 6,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  187 => 61,  182 => 59,  176 => 56,  170 => 53,  163 => 48,  151 => 42,  144 => 38,  136 => 37,  132 => 36,  128 => 35,  124 => 34,  120 => 33,  114 => 32,  111 => 31,  107 => 30,  85 => 13,  76 => 11,  70 => 10,  66 => 9,  61 => 7,  57 => 6,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -200,7 +217,8 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
         return new Twig_Source("{% extends 'admin-base.html.twig' %}
 
 {% block body %}
-    <h1>Order Retail</h1>
+    <h1>Order</h1>
+
     {{dump(orderHeader)}}
     {{dump(orderLines)}}
 
@@ -208,9 +226,7 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
 <h3>Creationdate: {% if orderHeader.creationdate %}{{ orderHeader.creationdate|date('Y-m-d') }}{% endif %}</h3>
 <h4>Lastupdate: {% if orderHeader.lastUpdate %}{{ orderHeader.lastUpdate|date('Y-m-d') }}{% endif %}Idorder: {{ orderHeader.idorder }}</h4>
 
-
 <h3>Username: <a href=\"{{ path('admin_user_show', {'id': orderHeader.iduser.id }) }}\">{{orderHeader.iduser.username}}</a></h3>
-
 
 
 <table class=\"table table-bordered\">
@@ -225,6 +241,7 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
                 <th>Taxe amount</th>
                 <th>Actions</th>
             </tr>
+        </thead>
         <tbody>
             {% for orderLine in orderLines %}
             <tr>
@@ -245,11 +262,19 @@ class __TwigTemplate_b309761bc9e1fbd7a073904452c542729a97c31a7844b6e14bffb73a136
             </tr>
             {% endfor %}
         </tbody>
-    </table>
+</table>
 
     <ul>
         <li>
             <a href=\"{{ path('orderheader_index') }}\">Back to the list</a>
+        </li>
+        <li>
+            <a href=\"{{ path('orderheader_edit', { 'idorder': orderHeader.idorder }) }}\">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type=\"submit\" value=\"Delete\">
+            {{ form_end(delete_form) }}
         </li>
     </ul>
 {% endblock %}

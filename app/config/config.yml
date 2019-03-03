@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@RemmyMainBundle/Resources/config/services.yml" }
-    - { resource: "@RemmyHomeBundle/Resources/config/services.yml" }
     - { resource: "@RemmyBackOfficeBundle/Resources/config/services.yml" }
     - { resource: "@RemmyFrontBundle/Resources/config/services.yml" }
 

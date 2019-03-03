@@ -4,10 +4,10 @@
 {#<h3> {{ product.categorycategory.name }}</h3>#}
     <h1>{{ product.name }}</h1>
     
-    <img src="{{ product.image }}" alt="">
-    <h2>{{ product.description }}</h2>
+    <img src="{{ asset('uploads/images_products/' ~ product.image) }}" alt="product Remmy">
+    <p>{{ product.description }}</p>
     
-    <p>{{ product.price }} € </p>
+    <p>Price {{ product.price }} € </p>
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -21,7 +21,8 @@
         <tbody>
             <tr>
                 {% for stock in productHasStocksRepo.findByidproduct(product.idproduct) %}
-                <td>{{stock.idstock}}</td>
+                {#{dump(productHasStocksRepo.findByidproduct(product.idproduct))}#}
+                <td>{{ productStocksRepo.findByidstock(stock.idstock)[0].idstock }}</td>
 
                 {# -- À faire utiliser un repo pour aller chercher le nom des tailles -- #}
                 <td>{{ productStocksRepo.findByidstock(stock.idstock)[0].idSize.name }}</td>

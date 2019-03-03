@@ -9,18 +9,18 @@
     <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
+                <th>Id Size</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Idsize</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for size in sizes %}
             <tr>
-                <td><a href="{{ path('size_show', { 'idsize': size.idsize }) }}">{{ size.name }}</a></td>
-                <td>{{ size.description }}</td>
                 <td>{{ size.idsize }}</td>
+                <td>{{ size.name }}</td>
+                <td>{{ size.description }}</td>
                 <td>
                     <ul>
                         <li>

@@ -3,6 +3,7 @@
 namespace Remmy\BackOfficeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Color
@@ -42,20 +43,6 @@ class Color
      */
     private $description;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="idcolor")
-     */
-    private $idproduct;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idproduct = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -138,41 +125,5 @@ class Color
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Add idproduct.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $idproduct
-     *
-     * @return Color
-     */
-    public function addIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
-    {
-        $this->idproduct[] = $idproduct;
-    
-        return $this;
-    }
-
-    /**
-     * Remove idproduct.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Product $idproduct
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct)
-    {
-        return $this->idproduct->removeElement($idproduct);
-    }
-
-    /**
-     * Get idproduct.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdproduct()
-    {
-        return $this->idproduct;
     }
 }

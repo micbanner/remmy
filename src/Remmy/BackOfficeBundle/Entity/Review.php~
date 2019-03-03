@@ -1,0 +1,49 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Review
+ *
+ * @ORM\Table(name="review", indexes={@ORM\Index(name="idProduct", columns={"idProduct"})})
+ * @ORM\Entity
+ */
+class Review
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idReview", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idreview;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ReviewStar", type="integer", nullable=false)
+     */
+    private $reviewstar;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comment", type="text", length=65535, nullable=false)
+     */
+    private $comment;
+
+    /**
+     * @var \Product
+     *
+     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
+     * })
+     */
+    private $idproduct;
+
+
+}

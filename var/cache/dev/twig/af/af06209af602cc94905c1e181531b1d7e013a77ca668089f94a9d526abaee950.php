@@ -52,7 +52,7 @@ class __TwigTemplate_57f28b599bd4bc975dd5d3e3b2f8e475c147611f78bad66ecaa702dbc29
         // line 4
         echo "    <h1>Category</h1>
 
-    <table>
+    <table class=\"table table-bordered\">
         <tbody>
             <tr>
                 <th>Name</th>
@@ -127,7 +127,7 @@ class __TwigTemplate_57f28b599bd4bc975dd5d3e3b2f8e475c147611f78bad66ecaa702dbc29
 {% block body %}
     <h1>Category</h1>
 
-    <table>
+    <table class=\"table table-bordered\">
         <tbody>
             <tr>
                 <th>Name</th>

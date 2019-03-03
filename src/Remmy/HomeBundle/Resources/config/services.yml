@@ -1,4 +1,0 @@
-services:
-#    remmy_home.example:
-#        class: Remmy\HomeBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]

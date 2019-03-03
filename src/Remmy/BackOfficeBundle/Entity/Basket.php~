@@ -1,0 +1,53 @@
+<?php
+
+namespace Remmy\BackOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Basket
+ *
+ * @ORM\Table(name="basket")
+ * @ORM\Entity
+ */
+class Basket
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creationDate", type="date", nullable=false)
+     */
+    private $creationdate;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idBasket", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idbasket;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idSession", type="integer", nullable=false)
+     */
+    private $idsession;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_update", type="date", nullable=false)
+     */
+    private $lastUpdate;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="statut", type="integer", nullable=false)
+     */
+    private $statut;
+
+
+}

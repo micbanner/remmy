@@ -35,20 +35,6 @@ class Size
      */
     private $description;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Category", mappedBy="idsize")
-     */
-    private $idcategory;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idcategory = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
 
     /**
@@ -107,41 +93,5 @@ class Size
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Add idcategory.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Category $idcategory
-     *
-     * @return Size
-     */
-    public function addIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
-    {
-        $this->idcategory[] = $idcategory;
-    
-        return $this;
-    }
-
-    /**
-     * Remove idcategory.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Category $idcategory
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeIdcategory(\Remmy\BackOfficeBundle\Entity\Category $idcategory)
-    {
-        return $this->idcategory->removeElement($idcategory);
-    }
-
-    /**
-     * Get idcategory.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getIdcategory()
-    {
-        return $this->idcategory;
     }
 }

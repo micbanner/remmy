@@ -52,7 +52,7 @@ class __TwigTemplate_2db5ec19697543b71660db6f263e64839685d01b0707a9e45d350e11c38
         // line 4
         echo "    <h1>User</h1>
 
-    <table>
+    <table class=\"table table-bordered\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -62,56 +62,80 @@ class __TwigTemplate_2db5ec19697543b71660db6f263e64839685d01b0707a9e45d350e11c38
         echo "</td>
             </tr>
             <tr>
-                <th>Gender</th>
+                <th>";
+        // line 13
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("form.gender", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 14
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 14, $this->source); })()), "gender", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Firstname</th>
+                <th>";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.firstname", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 18
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 18, $this->source); })()), "firstname", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>";
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.lastname", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 22
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 22, $this->source); })()), "lastname", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Address</th>
+                <th>";
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.address", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 26
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 26, $this->source); })()), "address", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Zipcode</th>
+                <th>";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.zipcode", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 30
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 30, $this->source); })()), "zipCode", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>City</th>
+                <th>";
+        // line 33
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.city", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 34
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 34, $this->source); })()), "city", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Country</th>
+                <th>";
+        // line 37
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.country", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 38
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 38, $this->source); })()), "country", []), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th>";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("profile.show.phone", [], "FOSUserBundle"), "html", null, true);
+        echo "</th>
                 <td>";
         // line 42
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 42, $this->source); })()), "phone", []), "html", null, true);
@@ -166,7 +190,7 @@ class __TwigTemplate_2db5ec19697543b71660db6f263e64839685d01b0707a9e45d350e11c38
 
     public function getDebugInfo()
     {
-        return array (  144 => 57,  139 => 55,  133 => 52,  127 => 49,  117 => 42,  110 => 38,  103 => 34,  96 => 30,  89 => 26,  82 => 22,  75 => 18,  68 => 14,  61 => 10,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  168 => 57,  163 => 55,  157 => 52,  151 => 49,  141 => 42,  137 => 41,  131 => 38,  127 => 37,  121 => 34,  117 => 33,  111 => 30,  107 => 29,  101 => 26,  97 => 25,  91 => 22,  87 => 21,  81 => 18,  77 => 17,  71 => 14,  67 => 13,  61 => 10,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -176,42 +200,42 @@ class __TwigTemplate_2db5ec19697543b71660db6f263e64839685d01b0707a9e45d350e11c38
 {% block body %}
     <h1>User</h1>
 
-    <table>
+    <table class=\"table table-bordered\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Gender</th>
+                <th>{{ 'form.gender'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.gender }}</td>
             </tr>
             <tr>
-                <th>Firstname</th>
+                <th>{{ 'profile.show.firstname'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.firstname }}</td>
             </tr>
             <tr>
-                <th>Lastname</th>
+                <th>{{ 'profile.show.lastname'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.lastname }}</td>
             </tr>
             <tr>
-                <th>Address</th>
+                <th>{{ 'profile.show.address'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.address }}</td>
             </tr>
             <tr>
-                <th>Zipcode</th>
+                <th>{{ 'profile.show.zipcode'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.zipCode }}</td>
             </tr>
             <tr>
-                <th>City</th>
+                <th>{{ 'profile.show.city'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.city }}</td>
             </tr>
             <tr>
-                <th>Country</th>
+                <th>{{ 'profile.show.country'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.country }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th>{{ 'profile.show.phone'|trans({}, 'FOSUserBundle') }}</th>
                 <td>{{ user.phone }}</td>
             </tr>
         </tbody>

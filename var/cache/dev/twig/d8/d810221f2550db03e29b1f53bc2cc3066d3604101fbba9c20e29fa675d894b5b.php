@@ -61,9 +61,9 @@ class __TwigTemplate_fe17e1378aaa64329d68b4628dcfd12d59fbb9283d359e3e52588f979c2
     <table class=\"table table-bordered\">
             <thead class=\"thead-dark\">
             <tr>
+                <th>Id Size</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Idsize</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -75,19 +75,17 @@ class __TwigTemplate_fe17e1378aaa64329d68b4628dcfd12d59fbb9283d359e3e52588f979c2
         foreach ($context['_seq'] as $context["_key"] => $context["size"]) {
             // line 20
             echo "            <tr>
-                <td><a href=\"";
+                <td>";
             // line 21
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("size_show", ["idsize" => twig_get_attribute($this->env, $this->source, $context["size"], "idsize", [])]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "name", []), "html", null, true);
-            echo "</a></td>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "idsize", []), "html", null, true);
+            echo "</td>
                 <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "description", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "name", []), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "idsize", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["size"], "description", []), "html", null, true);
             echo "</td>
                 <td>
                     <ul>
@@ -141,7 +139,7 @@ class __TwigTemplate_fe17e1378aaa64329d68b4628dcfd12d59fbb9283d359e3e52588f979c2
 
     public function getDebugInfo()
     {
-        return array (  115 => 36,  103 => 30,  97 => 27,  90 => 23,  86 => 22,  80 => 21,  77 => 20,  73 => 19,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  113 => 36,  101 => 30,  95 => 27,  88 => 23,  84 => 22,  80 => 21,  77 => 20,  73 => 19,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -157,18 +155,18 @@ class __TwigTemplate_fe17e1378aaa64329d68b4628dcfd12d59fbb9283d359e3e52588f979c2
     <table class=\"table table-bordered\">
             <thead class=\"thead-dark\">
             <tr>
+                <th>Id Size</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Idsize</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for size in sizes %}
             <tr>
-                <td><a href=\"{{ path('size_show', { 'idsize': size.idsize }) }}\">{{ size.name }}</a></td>
-                <td>{{ size.description }}</td>
                 <td>{{ size.idsize }}</td>
+                <td>{{ size.name }}</td>
+                <td>{{ size.description }}</td>
                 <td>
                     <ul>
                         <li>

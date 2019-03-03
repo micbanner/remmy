@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ProductHasStock
  *
- * @ORM\Table(name="product_has_stock", indexes={@ORM\Index(name="id_stock", columns={"idStock"}), @ORM\Index(name="IDX_DE1FF053C4E56C3", columns={"idproduct"})})
+ * @ORM\Table(name="product_has_stock", uniqueConstraints={@ORM\UniqueConstraint(name="idProduct", columns={"idProduct"})}, indexes={@ORM\Index(name="idStock", columns={"idStock"})})
  * @ORM\Entity
  */
 class ProductHasStock
@@ -15,51 +15,52 @@ class ProductHasStock
     /**
      * @var int
      *
-     * @ORM\Column(name="idProduct", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idproduct;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="idStock", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    private $idstock;
+    private $id;
 
     /**
      * @var \Product
      *
      * @ORM\ManyToOne(targetEntity="Product")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idproduct", referencedColumnName="idProduct")
+     *   @ORM\JoinColumn(name="idProduct", referencedColumnName="idProduct")
      * })
      */
-    private $idproduct2;
+    private $idproduct;
 
     /**
      * @var \ProductStock
      *
      * @ORM\ManyToOne(targetEntity="ProductStock")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idstock", referencedColumnName="idStock")
+     *   @ORM\JoinColumn(name="idStock", referencedColumnName="idStock")
      * })
      */
-    private $idstock2;
+    private $idstock;
 
 
 
     /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set idproduct.
      *
-     * @param int $idproduct
+     * @param \Remmy\BackOfficeBundle\Entity\Product|null $idproduct
      *
      * @return ProductHasStock
      */
-    public function setIdproduct($idproduct)
+    public function setIdproduct(\Remmy\BackOfficeBundle\Entity\Product $idproduct = null)
     {
         $this->idproduct = $idproduct;
     
@@ -69,7 +70,7 @@ class ProductHasStock
     /**
      * Get idproduct.
      *
-     * @return int
+     * @return \Remmy\BackOfficeBundle\Entity\Product|null
      */
     public function getIdproduct()
     {
@@ -79,11 +80,11 @@ class ProductHasStock
     /**
      * Set idstock.
      *
-     * @param int $idstock
+     * @param \Remmy\BackOfficeBundle\Entity\ProductStock|null $idstock
      *
      * @return ProductHasStock
      */
-    public function setIdstock($idstock)
+    public function setIdstock(\Remmy\BackOfficeBundle\Entity\ProductStock $idstock = null)
     {
         $this->idstock = $idstock;
     
@@ -93,58 +94,10 @@ class ProductHasStock
     /**
      * Get idstock.
      *
-     * @return int
+     * @return \Remmy\BackOfficeBundle\Entity\ProductStock|null
      */
     public function getIdstock()
     {
         return $this->idstock;
-    }
-
-    /**
-     * Set idproduct2.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\Product|null $idproduct2
-     *
-     * @return ProductHasStock
-     */
-    public function setIdproduct2(\Remmy\BackOfficeBundle\Entity\Product $idproduct2 = null)
-    {
-        $this->idproduct2 = $idproduct2;
-    
-        return $this;
-    }
-
-    /**
-     * Get idproduct2.
-     *
-     * @return \Remmy\BackOfficeBundle\Entity\Product|null
-     */
-    public function getIdproduct2()
-    {
-        return $this->idproduct2;
-    }
-
-    /**
-     * Set idstock2.
-     *
-     * @param \Remmy\BackOfficeBundle\Entity\ProductStock|null $idstock2
-     *
-     * @return ProductHasStock
-     */
-    public function setIdstock2(\Remmy\BackOfficeBundle\Entity\ProductStock $idstock2 = null)
-    {
-        $this->idstock2 = $idstock2;
-    
-        return $this;
-    }
-
-    /**
-     * Get idstock2.
-     *
-     * @return \Remmy\BackOfficeBundle\Entity\ProductStock|null
-     */
-    public function getIdstock2()
-    {
-        return $this->idstock2;
     }
 }

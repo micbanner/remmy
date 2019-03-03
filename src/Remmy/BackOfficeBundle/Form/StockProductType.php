@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class StockProductType extends AbstractType
 {
     /**
@@ -13,7 +14,10 @@ class StockProductType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('quantity')->add('idproduct')->add('idcolor')->add('idsize');
+        $builder->add('quantity')
+                ->add('idproduct')
+                ->add('idcolor')
+                ->add('idsize');
     }/**
      * {@inheritdoc}
      */
