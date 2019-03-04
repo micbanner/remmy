@@ -108,7 +108,7 @@ class ProductController extends Controller
      */
     public function showAction(Product $product)
     {
-        $session = $request->getSession();
+        //$session = $request->getSession();
 
 
 
@@ -151,7 +151,7 @@ class ProductController extends Controller
             $product->setImage($fileName);
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('product_edit', array('idproduct' => $product->getIdproduct()));
+            return $this->redirectToRoute('product_show', array('idproduct' => $product->getIdproduct()));
         }
 
         return $this->render('product/edit.html.twig', array(
